@@ -15,11 +15,13 @@ dependencies = [
     "opentelemetry-exporter-otlp-proto-http>=1.45.2",
     "pypdf>=7.0.0",
     "python-dotenv>=1.2.4",
+    "torch>=2.15",
 ]
 
 [dependency-groups]
 dev = [
     "pytest>=9.2.0",
+    "pytest-cov>=7.1.0",
 ]
 
 [tool.pytest.ini_options]
@@ -28,3 +30,12 @@ testpaths = ["tests"]
 
 [tool.uv]
 link-mode = "copy"
+
+# PyPI's Linux torch brings the CUDA libraries, gigabytes CI doesn't need; the embeddings run on CPU
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
