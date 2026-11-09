@@ -18,8 +18,12 @@ def test_citations_need_three_digits():
 
 
 def test_refusal_is_recognized_in_any_case():
-    assert answer.refused("não encontrei isso no Perguntas e Respostas do IRPF 2026")
-    assert not answer.refused("Sim [045].")
+    assert answer.refused("não encontrei isso no Perguntas e Respostas do IRPF 2026", [])
+    assert not answer.refused("Sim [045].", [45])
+
+
+def test_a_partial_refusal_with_citations_is_an_answer():
+    assert not answer.refused(f"Pode, sim [002]. Sobre o resto: {answer.REFUSAL}", [2])
 
 
 def test_finish_reports_what_was_seen_once():

@@ -14,8 +14,8 @@ K = 5
 
 
 class RAG:
-    def __init__(self, corpus: str = "questions", k: int = K):
-        self.search, self.llm = index.Search(corpus, k), answer.llm()
+    def __init__(self, corpus: str = "questions", k: int = K, search=None, llm=None):
+        self.search, self.llm = search or index.Search(corpus, k), llm or answer.llm()
 
     def __call__(self, question: str) -> answer.Answer:
         start = time.perf_counter()

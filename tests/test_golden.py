@@ -22,15 +22,17 @@ def test_mix():
 def test_fact_is_in_an_expected_question(item: golden.Item):
     assert item.expected and all(n in QUESTIONS for n in item.expected)
     texts = {n: QUESTIONS[n].text for n in item.expected}
-    assert any(golden.contains(t, item.fact) for t in texts.values()), f"{item.fact!r} is in none of {item.expected}"
+    for fact in item.facts:
+        assert any(golden.contains(t, fact) for t in texts.values()), f"{fact!r} is in none of {item.expected}"
 
 
 @pytest.mark.parametrize("item", [i for i in ITEMS if i.kind == "multi-hop"], ids=lambda i: i.id)
 def test_multi_hop_needs_the_second_question(item: golden.Item):
     first = QUESTIONS[item.expected[0]]
     assert item.hop in item.expected[1:]
-    assert golden.contains(QUESTIONS[item.hop].text, item.fact)
-    assert not golden.contains(first.text, item.fact), f"{item.fact!r} is already in {first.number}"
+    for fact in item.facts:
+        assert golden.contains(QUESTIONS[item.hop].text, fact)
+        assert not golden.contains(first.text, fact), f"{fact!r} is already in {first.number}"
     # The manual itself leads from the first question to the second, maybe through another one
     reachable = set(first.see) | {n for m in first.see for n in QUESTIONS[m].see}
     assert item.hop in reachable

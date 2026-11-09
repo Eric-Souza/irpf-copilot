@@ -61,9 +61,11 @@ class Act(Event):
 
 
 class Agent(Workflow):
-    def __init__(self, corpus: str = "questions", **kwargs):
+    def __init__(self, corpus: str = "questions", search=None, llm=None, questions=None, **kwargs):
         super().__init__(timeout=180, **kwargs)
-        self.search, self.llm, self.questions = index.Search(corpus, K), answer.llm(), manual.load()
+        self.search = search or index.Search(corpus, K)
+        self.llm = llm or answer.llm()
+        self.questions = questions or manual.load()
 
     @step
     async def start(self, ctx: Context, ev: StartEvent) -> Think:

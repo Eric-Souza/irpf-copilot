@@ -19,6 +19,15 @@ class Item:
     fact: str | None = None
     # For multi-hop: the question the fact is in, which the first expected one only points to
     hop: int | None = None
+    # Other wording of the fact, also copied from an expected question, for answers that quote that instead
+    also: list[str] = field(default_factory=list)
+
+    @property
+    def facts(self) -> list[str]:
+        return [self.fact, *self.also] if self.fact else []
+
+    def stated(self, text: str) -> bool:
+        return any(contains(text, f) for f in self.facts)
 
 
 def load(path: Path = GOLDEN) -> list[Item]:

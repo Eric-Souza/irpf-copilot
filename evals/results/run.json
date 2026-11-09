@@ -1,0 +1,5435 @@
+{
+ "summary": {
+  "rag-pages": {
+   "fact": 0.896551724137931,
+   "fact_by_kind": {
+    "number": 0.875,
+    "direct": 1.0,
+    "colloquial": 0.9,
+    "multi-hop": 0.8333333333333334
+   },
+   "cites_expected": 0.9137931034482759,
+   "dropped": 0,
+   "refused_out_of_scope": 1.0,
+   "refused_in_scope": 0.034482758620689655,
+   "calls": 1,
+   "tool_calls": 0,
+   "tokens": 2642.9710144927535,
+   "ms_median": 1009
+  },
+  "rag-questions": {
+   "fact": 0.9827586206896551,
+   "fact_by_kind": {
+    "number": 1.0,
+    "direct": 1.0,
+    "colloquial": 1.0,
+    "multi-hop": 0.9166666666666666
+   },
+   "cites_expected": 0.9655172413793104,
+   "dropped": 0,
+   "refused_out_of_scope": 1.0,
+   "refused_in_scope": 0.0,
+   "calls": 1,
+   "tool_calls": 0,
+   "tokens": 1822.7826086956522,
+   "ms_median": 988
+  },
+  "agent": {
+   "fact": 0.9655172413793104,
+   "fact_by_kind": {
+    "number": 1.0,
+    "direct": 1.0,
+    "colloquial": 0.95,
+    "multi-hop": 0.9166666666666666
+   },
+   "cites_expected": 0.9482758620689655,
+   "dropped": 0,
+   "refused_out_of_scope": 1.0,
+   "refused_in_scope": 0.0,
+   "calls": 1.0144927536231885,
+   "tool_calls": 0.014492753623188406,
+   "tokens": 2179.014492753623,
+   "ms_median": 1114
+  }
+ },
+ "results": {
+  "rag-pages": [
+   {
+    "id": "n01",
+    "text": "O limite de rendimentos tributáveis sujeitos ao ajuste na declaração cuja soma foi superior a R$ 35.584,00 (trinta e cinco mil, quinhentos e oitenta e quatro reais) no ano-calendário de 2025 obriga a apresentar a declaração [001].",
+    "cited": [
+     1
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     38,
+     473,
+     144,
+     5,
+     6,
+     7,
+     1
+    ],
+    "calls": 1,
+    "tokens": 2648,
+    "tools": [],
+    "ms": 1286,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n02",
+    "text": "A Declaração de Ajuste Anual do exercício de 2026 pode ser transmitida até as 23h59min59s, horário de Brasília, do dia 29 de maio de 2026 [037]. A pessoa física que se encontra no exterior também deve apresentar sua declaração até 29 de maio de 2026 [022]. \n\nO manual fornecido não trata de outros prazos gerais de entrega além desses e da Declaração Final de Espólio.",
+    "cited": [
+     37,
+     22
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     36,
+     37,
+     38,
+     106,
+     107,
+     32,
+     33,
+     34,
+     25,
+     26,
+     21,
+     22,
+     23,
+     24
+    ],
+    "calls": 1,
+    "tokens": 2778,
+    "tools": [],
+    "ms": 1048,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "n03",
+    "text": "A multa mínima por entregar a declaração depois do prazo é de R$ 165,74 (quando inexistir imposto devido ou nos casos previstos para o atraso) [024]. O manual não trata de outros valores mínimos para situações além das descritas.",
+    "cited": [
+     24
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     24,
+     21,
+     22,
+     23,
+     25,
+     126
+    ],
+    "calls": 1,
+    "tokens": 2605,
+    "tools": [],
+    "ms": 936,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n04",
+    "text": "O saldo do imposto pode ser pago em até 8 (oito) quotas, mensais e sucessivas, observado que nenhuma quota deve ser inferior a R$ 50,00 e o imposto de valor inferior a R$ 100,00 deve ser pago em quota única [063].",
+    "cited": [
+     63
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     49,
+     50,
+     51,
+     63,
+     64,
+     62,
+     52,
+     66
+    ],
+    "calls": 1,
+    "tokens": 2602,
+    "tools": [],
+    "ms": 1168,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n05",
+    "text": "Nenhuma quota deve ser inferior a R$ 50,00 (cinquenta reais) [063].",
+    "cited": [
+     63
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     62,
+     63,
+     64,
+     292,
+     293,
+     49,
+     50,
+     51,
+     66
+    ],
+    "calls": 1,
+    "tokens": 2522,
+    "tools": [],
+    "ms": 1036,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n06",
+    "text": "O limite anual individual para a dedução de despesas com instrução é de R$ 3.561,50 para o ano-calendário de 2025 [401].",
+    "cited": [
+     401
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     400,
+     401,
+     402,
+     409,
+     410,
+     411,
+     406,
+     407,
+     408,
+     358,
+     399
+    ],
+    "calls": 1,
+    "tokens": 2568,
+    "tools": [],
+    "ms": 793,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n07",
+    "text": "O valor do desconto simplificado é limitado a R$ 16.754,34 [012].",
+    "cited": [
+     12
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     10,
+     11,
+     12,
+     455,
+     456,
+     13,
+     17,
+     18,
+     19,
+     267
+    ],
+    "calls": 1,
+    "tokens": 2597,
+    "tools": [],
+    "ms": 956,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n08",
+    "text": "Não encontrei isso no Perguntas e Rpostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     267,
+     446,
+     252,
+     253,
+     251
+    ],
+    "calls": 1,
+    "tokens": 2915,
+    "tools": [],
+    "ms": 860,
+    "kind": "number",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "n09",
+    "text": "A alíquota de incidência do IR aplicável nas operações de day trade realizados em bolsas é de 20% [706].",
+    "cited": [
+     706
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     705,
+     706,
+     703,
+     704,
+     711,
+     712,
+     713,
+     714,
+     715,
+     643
+    ],
+    "calls": 1,
+    "tokens": 2760,
+    "tools": [],
+    "ms": 820,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n10",
+    "text": "Você pode vender em ações no mercado à vista até o limite de R$ 20.000,00 (vinte mil reais) no mês, desde que o total das alienações desse ativo não exceda esse valor [707].",
+    "cited": [
+     707
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     706,
+     707,
+     729,
+     723,
+     640,
+     725,
+     726
+    ],
+    "calls": 1,
+    "tokens": 2566,
+    "tools": [],
+    "ms": 793,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n11",
+    "text": "A alíquota aplicável sobre a parcela dos ganhos que não ultrapassar R$ 5.000.000,00 é de 15% [574] [643].",
+    "cited": [
+     574,
+     643
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     573,
+     574,
+     643,
+     640,
+     736
+    ],
+    "calls": 1,
+    "tokens": 2745,
+    "tools": [],
+    "ms": 1003,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n12",
+    "text": "O valor de alienação deve ser de até R$ 440.000,00 [683].",
+    "cited": [
+     683
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     684,
+     685,
+     682,
+     683,
+     575,
+     593,
+     594,
+     595
+    ],
+    "calls": 1,
+    "tokens": 2603,
+    "tools": [],
+    "ms": 803,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n13",
+    "text": "A parcela isenta na declaração está limitada a até R$ 1.903,98, por mês, no ano-calendário de 2025, a partir do mês em que o contribuinte completar 65 anos [052] [277].",
+    "cited": [
+     52,
+     277
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     51,
+     52,
+     276,
+     277,
+     280,
+     281,
+     282,
+     279,
+     189,
+     190
+    ],
+    "calls": 1,
+    "tokens": 2765,
+    "tools": [],
+    "ms": 865,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n14",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     74,
+     75,
+     76,
+     455,
+     308,
+     25,
+     26
+    ],
+    "calls": 1,
+    "tokens": 2580,
+    "tools": [],
+    "ms": 1021,
+    "kind": "number",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "n15",
+    "text": "Os criptoativos devem ser declarados na ficha Bens e Direitos quando o valor de aquisição de cada tipo de criptoativo for igual ou superior a R$ 5.000,00 (cinco mil reais) [473].",
+    "cited": [
+     473
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     575,
+     109,
+     110,
+     652,
+     653,
+     472,
+     473
+    ],
+    "calls": 1,
+    "tokens": 2695,
+    "tools": [],
+    "ms": 1236,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n16",
+    "text": "Para obter a isenção do imposto sobre a renda relativo ao ganho de capital na venda de imóvel residencial, o contribuinte deve aplicar o produto da venda na aquisição de imóveis residenciais localizados no País no prazo de 180 dias contado da celebração do contrato [575]. \n\nA contagem do prazo de 180 dias inclui a data da celebração do contrato. No caso de venda de mais de 1 (um) imóvel, o prazo é contado a partir da data da celebração do contrato relativo à primeira operação [575].",
+    "cited": [
+     575
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     575,
+     580,
+     581,
+     577,
+     578,
+     579
+    ],
+    "calls": 1,
+    "tokens": 2697,
+    "tools": [],
+    "ms": 1000,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d01",
+    "text": "Não há limitação quanto à idade [006].",
+    "cited": [
+     6
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     5,
+     6,
+     7,
+     51,
+     52,
+     354,
+     355,
+     356,
+     43,
+     44,
+     45,
+     8,
+     9,
+     10
+    ],
+    "calls": 1,
+    "tokens": 2729,
+    "tools": [],
+    "ms": 1141,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d02",
+    "text": "O contribuinte pode retificar a declaração visando à troca de opção por outra forma de tributação somente até 29 de maio de 2026 [046]. Se a declaração retificadora for apresentada após o prazo final (29/05/2026), não se admite a troca de opção por outra forma de tributação [043].",
+    "cited": [
+     46,
+     43
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     45,
+     46,
+     47,
+     48,
+     43,
+     44,
+     51,
+     52
+    ],
+    "calls": 1,
+    "tokens": 2850,
+    "tools": [],
+    "ms": 1036,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d03",
+    "text": "Sim. Extingue-se em cinco anos o direito de o contribuinte retificar a declaração de rendimentos, inclusive quanto ao valor dos bens e direitos declarados [044].",
+    "cited": [
+     44
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     51,
+     52,
+     67,
+     68,
+     69
+    ],
+    "calls": 1,
+    "tokens": 2741,
+    "tools": [],
+    "ms": 789,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d04",
+    "text": "Não. Laudos periciais expedidos por entidades privadas não atendem à exigência legal e não podem ser aceitos, ainda que o atendimento decorra de convênio referente ao SUS [237].",
+    "cited": [
+     237
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     236,
+     237,
+     284,
+     285,
+     286,
+     282
+    ],
+    "calls": 1,
+    "tokens": 2667,
+    "tools": [],
+    "ms": 1082,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d05",
+    "text": "Os lucros decorrentes de prêmios em dinheiro obtidos em loterias tradicionais (como mega-sena, lotofácil, quina), concursos desportivos em geral (exceto os de amortização e resgate das ações das sociedades anônimas), prêmios em concursos de prognósticos desportivos e a distribuição, mediante sorteio, de benefícios aos aplicadores em títulos de capitalização (sem amortização antecipada) são tributados exclusivamente na fonte à alíquota de 30% [317]. \n\nJá os benefícios líquidos pagos aos aplicadores em títulos de capitalização, mediante sorteio, nos casos em que há amortização antecipada, sujeitam-se à incidência do imposto sobre a renda exclusivamente na fonte à alíquota de 25% [317].",
+    "cited": [
+     317
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     316,
+     317,
+     318,
+     305,
+     306,
+     315
+    ],
+    "calls": 1,
+    "tokens": 2560,
+    "tools": [],
+    "ms": 1115,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d06",
+    "text": "A indenização recebida por danos morais — verba percebida por pessoa física e paga por pessoa física ou jurídica, em virtude de acordo ou decisão judicial — não é tributada pelo Imposto sobre a Renda na fonte, nem na Declaração de Ajuste Anual (DAA) [228]. A fonte pagadora está desobrigada de reter o tributo devido pelo contribuinte e a Secretaria Especial da Receita Federal do Brasil (RFB) não constituirá os respectivos créditos tributários [228]. \n\nPara declarar esses rendimentos, a pessoa física deve informá-los no campo “Outros” da Ficha “Rendimentos Isentos e Não Tributáveis”, com a especificação da natureza do rendimento [228].",
+    "cited": [
+     228
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     293,
+     294,
+     226,
+     227,
+     228,
+     216,
+     217,
+     218,
+     204,
+     205,
+     206,
+     329,
+     330,
+     331
+    ],
+    "calls": 1,
+    "tokens": 2868,
+    "tools": [],
+    "ms": 1388,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d07",
+    "text": "As pensões pagas por liberalidade não são dedutíveis por falta de previsão legal [363].",
+    "cited": [
+     363
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     362,
+     363,
+     364,
+     360,
+     361,
+     172,
+     279
+    ],
+    "calls": 1,
+    "tokens": 2392,
+    "tools": [],
+    "ms": 943,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d08",
+    "text": "Os rendimentos obtidos em conta de depósito de poupança pela pessoa física estão isentos do imposto sobre a renda, ainda que em virtude de decisão judicial que tenha determinado a correção dos valores depositados por índice diferente do fixado pela autoridade monetária [741]. Tratando-se de conta de depósito de poupança em nome de menor, cujo depósito é efetuado em decorrência de ordem judicial, os rendimentos auferidos também são isentos do imposto sobre a renda [742]. As importâncias correspondentes aos juros de conta de depósito de poupança remetidas para beneficiário pessoa física não residente no Brasil não são tributáveis [743].",
+    "cited": [
+     741,
+     742,
+     743
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     740,
+     741,
+     742,
+     743,
+     158,
+     159,
+     160,
+     161,
+     156,
+     157,
+     144,
+     145,
+     148,
+     149
+    ],
+    "calls": 1,
+    "tokens": 2661,
+    "tools": [],
+    "ms": 1219,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d09",
+    "text": "Qualquer contribuinte pode optar pelo desconto simplificado [014].",
+    "cited": [
+     14
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     13,
+     14,
+     15,
+     12,
+     455,
+     456,
+     17,
+     18,
+     19,
+     10,
+     11
+    ],
+    "calls": 1,
+    "tokens": 2710,
+    "tools": [],
+    "ms": 945,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d10",
+    "text": "O valor pago a título de férias, acrescido do terço constitucional, deve ser tributado no mês de seu pagamento e em separado de qualquer outro rendimento pago no mês [178]. Na Declaração de Ajuste Anual, as férias são tributadas em conjunto com os demais rendimentos [178]. \n\nNão são tributados pelo Imposto sobre a Renda na fonte, nem na Declaração de Ajuste Anual, os pagamentos efetuados sob as rubricas de férias não gozadas (integrais, proporcionais ou em dobro) convertidas em pecúnia, e de adicional de um terço constitucional quando agregado a pagamento de férias, por ocasião da extinção do contrato de trabalho (seja por rescisão, aposentadoria ou exoneração), por necessidade do serviço ou por conveniência do servidor ou empregado [178]. Também não são tributados os pagamentos efetuados sob a rubrica de abono pecuniário relativo à conversão de 1/3 do período de férias nos termos da CLT [178].",
+    "cited": [
+     178
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     177,
+     178
+    ],
+    "calls": 1,
+    "tokens": 2613,
+    "tools": [],
+    "ms": 1299,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c01",
+    "text": "Não há limitação quanto à idade para a obrigatoriedade ou dispensa de apresentação da Declaração de Ajuste Anual [006]. O contribuinte está obrigado a declarar caso se enquadre nas hipóteses previstas na pergunta 001 [005]. *(Nota: o trecho recebido não inclui o texto completo da pergunta 001).*",
+    "cited": [
+     6,
+     5
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     134,
+     279,
+     280,
+     349,
+     350,
+     5,
+     6,
+     7,
+     51,
+     52
+    ],
+    "calls": 1,
+    "tokens": 2685,
+    "tools": [],
+    "ms": 1104,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c02",
+    "text": "Sim. O filho ou enteado pode ser considerado dependente até 24 anos de idade quando estiver cursando estabelecimento de ensino superior ou escola técnica de segundo grau [341] [350].",
+    "cited": [
+     341,
+     350
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     419,
+     420,
+     421,
+     340,
+     341,
+     349,
+     350,
+     354,
+     355,
+     356,
+     339
+    ],
+    "calls": 1,
+    "tokens": 2785,
+    "tools": [],
+    "ms": 908,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c03",
+    "text": "Sim, os pagamentos feitos com sessões do método Pilates são dedutíveis da base de cálculo do IRPF quando o serviço for realizado por profissional fisioterapeuta, haja a comprovação dessa condição mediante documento hábil e idôneo, e desde que atendidos os demais requisitos normativos de dedutibilidade [331] [383].",
+    "cited": [
+     331,
+     383
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     331,
+     381,
+     382,
+     383,
+     384,
+     367,
+     390,
+     391
+    ],
+    "calls": 1,
+    "tokens": 2546,
+    "tools": [],
+    "ms": 1127,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c04",
+    "text": "Não, os gastos com medicamentos não podem ser deduzidos como despesas médicas, a não ser que integrem a conta emitida pelo estabelecimento hospitalar [392].",
+    "cited": [
+     392
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     368,
+     391,
+     392,
+     393,
+     378,
+     379,
+     380,
+     381,
+     369,
+     331
+    ],
+    "calls": 1,
+    "tokens": 2709,
+    "tools": [],
+    "ms": 980,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c05",
+    "text": "Não. Os pagamentos de aulas de idioma estrangeiro e de natação não são dedutíveis por falta de previsão legal [415].",
+    "cited": [
+     415
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     414,
+     415,
+     416,
+     417,
+     406,
+     407,
+     408,
+     409,
+     404,
+     405,
+     399,
+     400,
+     423,
+     424,
+     425,
+     426
+    ],
+    "calls": 1,
+    "tokens": 2815,
+    "tools": [],
+    "ms": 1017,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c06",
+    "text": "Sim, os gastos com creche podem ser deduzidos como despesas com instrução, obedecidos aos limites e às condições legais [406]. O manual não trata de outros detalhes além disso para esta questão.",
+    "cited": [
+     406
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     404,
+     405,
+     406,
+     407,
+     248,
+     399,
+     400,
+     423,
+     424,
+     425,
+     426,
+     562,
+     563,
+     564
+    ],
+    "calls": 1,
+    "tokens": 2776,
+    "tools": [],
+    "ms": 1060,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c07",
+    "text": "Não. A indenização recebida por danos morais, paga por pessoa física ou jurídica em virtude de acordo ou decisão judicial, não é tributada pelo Imposto sobre a Renda na fonte, nem na Declaração de Ajuste Anual (DAA) [228].",
+    "cited": [
+     228
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     293,
+     294,
+     289,
+     290,
+     608,
+     609,
+     226,
+     227,
+     228,
+     216,
+     217,
+     218
+    ],
+    "calls": 1,
+    "tokens": 2549,
+    "tools": [],
+    "ms": 884,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c08",
+    "text": "Os lucros decorrentes de prêmios em dinheiro obtidos em loterias tradicionais (tais como mega-sena, lotofácil, quina) são tributados exclusivamente na fonte à alíquota de 30% [317].",
+    "cited": [
+     317
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     316,
+     317,
+     643,
+     318,
+     315,
+     184
+    ],
+    "calls": 1,
+    "tokens": 2516,
+    "tools": [],
+    "ms": 1307,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c09",
+    "text": "Sim, o gasto com colocação e manutenção de aparelho ortodôntico é dedutível como despesa médica, desde que comprovado [378]. \n\nEntretanto, o gasto com a aquisição do aparelho ortodôntico somente é dedutível se integrar a conta emitida pelo profissional [378]. \n\nNo caso de despesas com aparelhos ortopédicos e próteses ortopédicas e dentárias, exige-se a comprovação com receituário médico ou odontológico e nota fiscal em nome do beneficiário [367]. As despesas médicas dedutíveis restringem-se aos pagamentos efetuados pelo contribuinte para o seu próprio tratamento ou o de seus dependentes relacionados na Declaração de Ajuste Anual, incluindo-se os alimentandos em razão de decisão judicial, acordo homologado judicialmente ou por escritura pública [367].",
+    "cited": [
+     378,
+     367
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     374,
+     375,
+     376,
+     377,
+     378,
+     366,
+     367,
+     379,
+     380,
+     381,
+     406,
+     407,
+     408,
+     409
+    ],
+    "calls": 1,
+    "tokens": 2760,
+    "tools": [],
+    "ms": 1305,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c10",
+    "text": "Não, o rendimento recebido a título de pensão alimentícia decorrente de decisão judicial, acordo homologado judicialmente ou escritura pública não está sujeito ao recolhimento mensal obrigatório (carnê-leão) [173] [223] [134].",
+    "cited": [
+     173,
+     223,
+     134
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     173,
+     266,
+     267,
+     222,
+     223,
+     134
+    ],
+    "calls": 1,
+    "tokens": 2621,
+    "tools": [],
+    "ms": 1117,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c11",
+    "text": "As pensões pagas por liberalidade, ou seja, sem decisão judicial, acordo homologado judicialmente ou em decorrência de escritura pública, não são dedutíveis por falta de previsão legal [363].",
+    "cited": [
+     363
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     172,
+     426,
+     427,
+     360,
+     361,
+     130,
+     362,
+     363,
+     364
+    ],
+    "calls": 1,
+    "tokens": 2247,
+    "tools": [],
+    "ms": 839,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c12",
+    "text": "O rendimento bruto dessa atividade é o correspondente a, no mínimo, 60% do valor total recebido, e os valores relativos a 40% do transporte de passageiros devem ser informados na linha específica da Ficha Rendimentos Isentos e Não Tributáveis [192].",
+    "cited": [
+     192
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     190,
+     191,
+     192,
+     163,
+     164,
+     193,
+     289,
+     290
+    ],
+    "calls": 1,
+    "tokens": 2659,
+    "tools": [],
+    "ms": 888,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c13",
+    "text": "A alíquota do imposto incidente sobre o prêmio líquido excedente ao valor da primeira faixa da tabela de incidência anual do IRPF é de 15% (quinze por cento) [318].",
+    "cited": [
+     318
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     318,
+     317,
+     643,
+     705,
+     706
+    ],
+    "calls": 1,
+    "tokens": 2619,
+    "tools": [],
+    "ms": 897,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c14",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     504,
+     505,
+     506,
+     181,
+     182,
+     303,
+     304,
+     305,
+     198,
+     199,
+     324,
+     325
+    ],
+    "calls": 1,
+    "tokens": 2645,
+    "tools": [],
+    "ms": 796,
+    "kind": "colloquial",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "c15",
+    "text": "Considera-se isento do imposto sobre a renda, na fonte e na Declaração de Ajuste Anual, o lucro do titular de empresa optante pelo Simples Nacional na condição de Microempreendedor Individual (MEI), observado, a partir do mês de janeiro do ano-calendário de 2026, o disposto nos arts. 6º-A e 16-A da Lei nº 9.250, de 26 de dezembro de 1995 [184]. A isenção fica limitada ao valor resultante da aplicação, sobre a receita bruta mensal, no caso de antecipação de fonte, ou sobre a receita bruta total anual, tratando-se de DAA, dos percentuais de presunção da base de cálculo do IRPJ mencionados no art. 15 da Lei nº 9.249, de 26 de dezembro de 1995 [184]. O limite acima não se aplica na hipótese de o microempreendedor individual manter escrituração contábil que evidencie lucro superior àquele limite [184]. Além disso, não são considerados isentos os valores pagos ao MEI correspondentes a pró-labore, aluguéis ou serviços prestados [184].",
+    "cited": [
+     184
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     184,
+     183,
+     244,
+     245,
+     260,
+     261,
+     262
+    ],
+    "calls": 1,
+    "tokens": 2908,
+    "tools": [],
+    "ms": 1271,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c16",
+    "text": "Sim. Uma vez que o pagamento ocorreu já no ano-calendário de 2025, essa despesa poderá ser deduzida na Declaração de Ajuste Anual - DAA do exercício de 2026, obedecidos aos limites e condições legais [425]. Caso o contribuinte não deduza essa despesa na DAA do exercício de 2026, não poderá fazê-lo na DAA do exercício de 2027, pois, para efeito de imposto devido pelas pessoas físicas, importa o momento do desembolso [425].",
+    "cited": [
+     425
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     423,
+     424,
+     425,
+     426,
+     399,
+     400,
+     419,
+     420,
+     421,
+     427,
+     349,
+     350
+    ],
+    "calls": 1,
+    "tokens": 2580,
+    "tools": [],
+    "ms": 1207,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c17",
+    "text": "Pagamentos de horas extras, mesmo que realizados em virtude de acordo coletivo mediado por sindicato, configuram-se como rendimentos do trabalho, sujeitando-se à retenção na fonte e à tributação na Declaração de Ajuste Anual - DAA [186].",
+    "cited": [
+     186
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     185,
+     186,
+     187,
+     608,
+     609,
+     63,
+     64,
+     163,
+     164,
+     309,
+     310
+    ],
+    "calls": 1,
+    "tokens": 2340,
+    "tools": [],
+    "ms": 1009,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c18",
+    "text": "Sim, é possível receber a restituição informando a chave PIX do titular da declaração [074] [122]. Essa opção também serve como critério de prioridade no recebimento [075].",
+    "cited": [
+     74,
+     122,
+     75
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     73,
+     74,
+     122,
+     123,
+     75,
+     76,
+     233,
+     234,
+     92
+    ],
+    "calls": 1,
+    "tokens": 2475,
+    "tools": [],
+    "ms": 1071,
+    "kind": "colloquial",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "c19",
+    "text": "Somente é dedutível a título de pensão o valor pago como pensão alimentícia [360]. As quantias pagas decorrentes de sentença judicial para cobertura de despesas médicas e com instrução, destacadas da pensão, são dedutíveis sob a forma de despesas médicas e despesas com instrução dos alimentandos, desde que obedecidos os requisitos e limites legais [360]. Os demais valores estipulados na sentença, tais como aluguéis, condomínio, transporte, previdência complementar, não são dedutíveis [360].",
+    "cited": [
+     360
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     173,
+     364,
+     365,
+     123,
+     174,
+     360,
+     361
+    ],
+    "calls": 1,
+    "tokens": 2576,
+    "tools": [],
+    "ms": 1025,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c20",
+    "text": "O contribuinte obrigado a apresentar a declaração, no caso de apresentação após o prazo ou da não apresentação, fica sujeito à multa por atraso calculada da seguinte forma: existindo imposto devido, multa de 1% ao mês-calendário ou fração de atraso, incidente sobre o imposto devido, observados os valores mínimo de R$ 165,74 e máximo de 20% do imposto devido; inexistindo imposto devido, multa de R$ 165,74 [024]. A apresentação de Declaração de Ajuste Anual retificadora não está sujeita à multa por atraso na entrega [024].",
+    "cited": [
+     24
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     24,
+     25,
+     21,
+     22,
+     23,
+     207
+    ],
+    "calls": 1,
+    "tokens": 2730,
+    "tools": [],
+    "ms": 1156,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m01",
+    "text": "Não. A isenção relativa à doença grave especificada em lei não desobriga, por si só, o contribuinte de apresentar declaração [011]. \n\nPara o reconhecimento da isenção do imposto sobre a renda relativo a proventos de aposentadoria, reforma e pensão, a doença grave deve ser comprovada mediante laudo pericial emitido por serviço médico oficial da União, dos estados, do Distrito Federal ou dos municípios [282].",
+    "cited": [
+     11,
+     282
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     284,
+     285,
+     282,
+     286,
+     10,
+     11,
+     12,
+     280,
+     281
+    ],
+    "calls": 1,
+    "tokens": 2800,
+    "tools": [],
+    "ms": 952,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m02",
+    "text": "Não. A restituição só é creditada em conta se o declarante for seu titular ou utilizar conta conjunta [072].",
+    "cited": [
+     72
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     92,
+     71,
+     72,
+     73,
+     122,
+     123,
+     74,
+     134,
+     135
+    ],
+    "calls": 1,
+    "tokens": 2416,
+    "tools": [],
+    "ms": 1320,
+    "kind": "multi-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m03",
+    "text": "Sim, o contribuinte que possui mais de uma fonte pagadora pode optar pelo desconto simplificado [015]. O desconto simplificado corresponde à dedução de 20% do valor dos rendimentos tributáveis na Declaração de Ajuste Anual, limitado a R$ 16.754,34 [012].",
+    "cited": [
+     15,
+     12
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     12,
+     13,
+     455,
+     456,
+     10,
+     11,
+     14,
+     15,
+     17,
+     18,
+     19
+    ],
+    "calls": 1,
+    "tokens": 2781,
+    "tools": [],
+    "ms": 1017,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m04",
+    "text": "A isenção relativa a doença grave especificada em lei não desobriga, por si só, o contribuinte de apresentar a declaração [011]. \n\nEstá obrigado a apresentar a Declaração de Ajuste Anual quem recebeu rendimentos tributáveis, sujeitos ao ajuste na declaração, cuja soma foi superior a R$ 35.584,00 [001].\n\nNão encontrei isso no Perguntas e Rspostas do IRPF 2026 quanto à possibilidade de declarar mesmo sem estar obrigado.",
+    "cited": [
+     11,
+     1
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     10,
+     11,
+     12,
+     184,
+     163,
+     164,
+     1,
+     38
+    ],
+    "calls": 1,
+    "tokens": 2683,
+    "tools": [],
+    "ms": 966,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m05",
+    "text": "O contribuinte obrigado a apresentar a declaração, no caso de apresentação após o prazo ou da não apresentação, fica sujeito a uma multa calculada da seguinte forma: existindo imposto devido, a multa é de 1% ao mês-calendário ou fração de atraso sobre o imposto devido, com valor mínimo de R$ 165,74 e máximo de 20% do imposto devido; inexistindo imposto devido, a multa é de R$ 165,74 [024]. O manual fornecido não traz informações sobre a multa para quem não era obrigado a declarar.",
+    "cited": [
+     24
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     24,
+     25,
+     21,
+     22,
+     23,
+     126
+    ],
+    "calls": 1,
+    "tokens": 2684,
+    "tools": [],
+    "ms": 1169,
+    "kind": "multi-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m06",
+    "text": "O desconto simplificado não necessita de comprovação e pode ser utilizado independentemente do montante dos rendimentos recebidos e do número de fontes pagadoras [012]. \n\nQuem optou pelo desconto simplificado não pode deduzir os gastos com os Fundos da Criança e do Adolescente, pois o desconto simplificado substitui todas as deduções a que o contribuinte tem direito na declaração de rendimentos, inclusive aquelas que são diminuídas diretamente do imposto [456].",
+    "cited": [
+     12,
+     456
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     12,
+     13,
+     455,
+     456,
+     457,
+     458
+    ],
+    "calls": 1,
+    "tokens": 2600,
+    "tools": [],
+    "ms": 1448,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m07",
+    "text": "Não, você não faz jus à isenção de alienação do único imóvel se o seu cônjuge possui outro bem imóvel adquirido antes do casamento, pois nas alienações de bens comuns decorrentes do regime de casamento o ganho de capital é apurado em relação ao bem como um todo [672]. \n\nEstá isento do imposto sobre a renda o ganho de capital auferido na alienação do único imóvel que o titular possua, cujo valor de alienação seja de até R$ 440.000,00, desde que não tenha realizado qualquer outra alienação de imóvel, tributada ou não, nos últimos cinco anos [683].",
+    "cited": [
+     672,
+     683
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     684,
+     685,
+     665,
+     666,
+     682,
+     683,
+     671,
+     672
+    ],
+    "calls": 1,
+    "tokens": 2762,
+    "tools": [],
+    "ms": 1232,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m08",
+    "text": "Sim, o contribuinte pode retificar a declaração a fim de se beneficiar da isenção legal sobre os proventos de aposentadoria ou pensão, até o valor permitido na legislação [052]. \n\nA alteração pode ser feita mediante acesso ao serviço “Meu Imposto de Renda”, disponível no site da RFB na internet (https://www.gov.br/receitafederal) e em aplicativo da RFB para dispositivos móveis, tais como tablets e smartphones [051].",
+    "cited": [
+     52,
+     51
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     51,
+     52,
+     173,
+     174,
+     276,
+     277,
+     279,
+     280,
+     17,
+     18,
+     19
+    ],
+    "calls": 1,
+    "tokens": 2711,
+    "tools": [],
+    "ms": 820,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m09",
+    "text": "Quando paga dentro do prazo legal, a 2ª quota (com vencimento em 30/06/2026) é calculada pelo valor apurado, mais 1% [064].",
+    "cited": [
+     64
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     49,
+     50,
+     51,
+     62,
+     63,
+     66,
+     64
+    ],
+    "calls": 1,
+    "tokens": 2609,
+    "tools": [],
+    "ms": 1022,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m10",
+    "text": "O prazo para que o contribuinte possa pleitear a restituição do imposto pago indevidamente ou em valor maior que o devido extingue-se após o transcurso do prazo de 5 anos, contados da data da extinção do crédito tributário, tratando-se de rendimentos sujeitos à tributação exclusiva na fonte, não tributáveis ou isentos [069]. \n\nO manual não trata do prazo geral ou de outras hipóteses de restituição além dessa.\n\nExtingue-se em cinco anos o direito de o contribuinte retificar a declaração de rendimentos, inclusive quanto ao valor dos bens e direitos declarados [044]. \n\nSobre o termo inicial da contagem do prazo de 5 anos:\na) se não tiver havido algum imposto pago antecipadamente (Carnê-leão, Imposto complementar, IRRF): 5 (cinco) anos a partir de 1º de janeiro do ano seguinte ao ano inicial de apresentação da declaração [044];\nb) se tiver havido algum imposto pago antecipadamente: 5 (cinco) anos a partir do ano inicial de apresentação da declaração [044].",
+    "cited": [
+     69,
+     44
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     43,
+     44,
+     45,
+     67,
+     68,
+     69,
+     46,
+     47,
+     48,
+     51,
+     52,
+     74,
+     75,
+     76
+    ],
+    "calls": 1,
+    "tokens": 2997,
+    "tools": [],
+    "ms": 1295,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m11",
+    "text": "Os pagamentos de aulas de natação não são dedutíveis por falta de previsão legal [415]. \n\nO manual não informa o limite geral da dedução com educação (apenas menciona limites específicos para casos como divórcio ou sentença judicial, que são de R$ 3.561,50 para o ano-calendário de 2025) [408] [411].",
+    "cited": [
+     415,
+     408,
+     411
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     414,
+     415,
+     416,
+     417,
+     399,
+     400,
+     404,
+     405,
+     406,
+     407,
+     408,
+     409,
+     410,
+     411
+    ],
+    "calls": 1,
+    "tokens": 2892,
+    "tools": [],
+    "ms": 1049,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m12",
+    "text": "Sim, o filho com até 24 anos de idade que ainda esteja cursando estabelecimento de ensino superior ou escola técnica de segundo grau pode ser considerado dependente [340] [350]. \n\nA companheira com quem o contribuinte viva há mais de 5 anos também pode ser incluída como dependente [340].",
+    "cited": [
+     340,
+     350
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     340,
+     341,
+     352,
+     353,
+     354,
+     349,
+     350,
+     339,
+     355,
+     356
+    ],
+    "calls": 1,
+    "tokens": 2854,
+    "tools": [],
+    "ms": 1168,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "o01",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     207,
+     573,
+     574,
+     308,
+     315
+    ],
+    "calls": 1,
+    "tokens": 2585,
+    "tools": [],
+    "ms": 919,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o02",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     482,
+     483,
+     484,
+     275,
+     276,
+     736,
+     737,
+     738,
+     38,
+     65,
+     66
+    ],
+    "calls": 1,
+    "tokens": 2685,
+    "tools": [],
+    "ms": 738,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o03",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     184,
+     183,
+     3,
+     4,
+     5,
+     193,
+     194
+    ],
+    "calls": 1,
+    "tokens": 2644,
+    "tools": [],
+    "ms": 1008,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o04",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     207,
+     668,
+     669,
+     670,
+     718,
+     719,
+     720,
+     721,
+     580,
+     581,
+     546
+    ],
+    "calls": 1,
+    "tokens": 2577,
+    "tools": [],
+    "ms": 754,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o05",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     723,
+     725,
+     726,
+     724
+    ],
+    "calls": 1,
+    "tokens": 2657,
+    "tools": [],
+    "ms": 707,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o06",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     51,
+     52,
+     278,
+     279,
+     280,
+     92,
+     187
+    ],
+    "calls": 1,
+    "tokens": 2278,
+    "tools": [],
+    "ms": 749,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o07",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     446,
+     88,
+     89,
+     130,
+     409,
+     279
+    ],
+    "calls": 1,
+    "tokens": 2143,
+    "tools": [],
+    "ms": 874,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o08",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     8,
+     9,
+     10,
+     331,
+     130,
+     1
+    ],
+    "calls": 1,
+    "tokens": 2403,
+    "tools": [],
+    "ms": 713,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o09",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     438,
+     439,
+     440,
+     441,
+     428,
+     429,
+     455,
+     267,
+     66
+    ],
+    "calls": 1,
+    "tokens": 2330,
+    "tools": [],
+    "ms": 753,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o10",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     106,
+     107,
+     21,
+     22,
+     23,
+     24,
+     118,
+     119,
+     36,
+     37,
+     38,
+     19,
+     20
+    ],
+    "calls": 1,
+    "tokens": 2647,
+    "tools": [],
+    "ms": 940,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o11",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     643,
+     574,
+     573,
+     705,
+     706,
+     308
+    ],
+    "calls": 1,
+    "tokens": 2649,
+    "tools": [],
+    "ms": 762,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   }
+  ],
+  "rag-questions": [
+   {
+    "id": "n01",
+    "text": "O limite de rendimentos tributáveis recebidos em 2025 que obriga a apresentar a Declaração de Ajuste Anual em 2026 é superior a R$ 35.584,00 [001].",
+    "cited": [
+     1
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     38,
+     1,
+     26,
+     61
+    ],
+    "calls": 1,
+    "tokens": 2362,
+    "tools": [],
+    "ms": 1235,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n02",
+    "text": "A declaração pode ser transmitida até as 23h59min59s, horário de Brasília, do dia 29 de maio de 2026 [037].",
+    "cited": [
+     37
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     37,
+     26,
+     40,
+     28,
+     33
+    ],
+    "calls": 1,
+    "tokens": 1940,
+    "tools": [],
+    "ms": 1562,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "n03",
+    "text": "A multa mínima por entregar a Declaração de Ajuste Anual depois do prazo é de R$ 165,74, nos casos em que não há imposto devido [024]. Se houver imposto devido, a multa é de 1% ao mês-calendário ou fração de atraso sobre o imposto devido, observando o valor mínimo de R$ 165,74 e o máximo de 20% do imposto devido [024].",
+    "cited": [
+     24
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     24,
+     25,
+     57
+    ],
+    "calls": 1,
+    "tokens": 2226,
+    "tools": [],
+    "ms": 883,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n04",
+    "text": "O saldo do imposto pode ser pago em até 8 (oito) quotas, mensais e sucessivas [063].",
+    "cited": [
+     63
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     63,
+     51,
+     50,
+     66
+    ],
+    "calls": 1,
+    "tokens": 1885,
+    "tools": [],
+    "ms": 862,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n05",
+    "text": "Nenhuma quota deve ser inferior a R$ 50,00 (cinquenta reais) [063].",
+    "cited": [
+     63
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     63,
+     50,
+     732,
+     292
+    ],
+    "calls": 1,
+    "tokens": 1650,
+    "tools": [],
+    "ms": 1195,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n06",
+    "text": "O limite anual individual de dedução com despesas de instrução é de R$ 3.561,50 para o ano-calendário de 2025 [401] [411] [408].",
+    "cited": [
+     401,
+     411,
+     408
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     401,
+     402,
+     411,
+     408,
+     407
+    ],
+    "calls": 1,
+    "tokens": 1266,
+    "tools": [],
+    "ms": 993,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n07",
+    "text": "O desconto simplificado na Declaração de Ajuste Anual corresponde a 20% do valor dos rendimentos tributáveis, limitado a R$ 16.754,34 [012].",
+    "cited": [
+     12
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     12,
+     14,
+     18,
+     20,
+     267
+    ],
+    "calls": 1,
+    "tokens": 1558,
+    "tools": [],
+    "ms": 847,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n08",
+    "text": "A faixa de isenção da tabela progressiva anual para o ano-calendário de 2025 é de até R$ 28.467,20 [061].",
+    "cited": [
+     61
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     61,
+     267,
+     446,
+     250
+    ],
+    "calls": 1,
+    "tokens": 2537,
+    "tools": [],
+    "ms": 878,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n09",
+    "text": "Os ganhos líquidos auferidos em operações day trade realizadas em bolsas de valores, de mercadorias, de futuros e assemelhadas serão tributados à alíquota de 20% [706]. Além disso, os rendimentos auferidos em operações day trade sujeitam-se à incidência do imposto sobre a renda incidente na fonte à alíquota de 1% [712].",
+    "cited": [
+     706,
+     712
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     706,
+     712,
+     714,
+     715,
+     574
+    ],
+    "calls": 1,
+    "tokens": 1592,
+    "tools": [],
+    "ms": 1126,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n10",
+    "text": "Você pode vender em ações no mercado à vista de bolsas de valores ou mercado de balcão até o limite de R$ 20.000,00 (vinte mil reais) no mês, com isenção do imposto sobre a renda sobre os ganhos líquidos auferidos [707].",
+    "cited": [
+     707
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     707,
+     729,
+     640,
+     706,
+     731
+    ],
+    "calls": 1,
+    "tokens": 2113,
+    "tools": [],
+    "ms": 1087,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n11",
+    "text": "A alíquota aplicável sobre a parcela dos ganhos que não ultrapassar R$ 5.000.000,00 é de 15% [574] [643].",
+    "cited": [
+     574,
+     643
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     574,
+     643,
+     649
+    ],
+    "calls": 1,
+    "tokens": 2540,
+    "tools": [],
+    "ms": 946,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n12",
+    "text": "O valor de alienação do único imóvel deve ser de até R$ 440.000,00 para ter direito à isenção do imposto sobre a renda do ganho de capital, desde que não tenha sido realizada qualquer outra alienação de imóvel, tributada ou não, nos últimos cinco anos [683].",
+    "cited": [
+     683
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     684,
+     685,
+     575,
+     594,
+     683
+    ],
+    "calls": 1,
+    "tokens": 1877,
+    "tools": [],
+    "ms": 840,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n13",
+    "text": "A parcela isenta dos proventos de aposentadoria para quem tem 65 anos ou mais é de até R$ 1.903,98 por mês, no ano-calendário de 2025, a partir do mês em que o contribuinte completar 65 anos [052] [277].",
+    "cited": [
+     52,
+     277
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     52,
+     281,
+     277,
+     278,
+     280
+    ],
+    "calls": 1,
+    "tokens": 1991,
+    "tools": [],
+    "ms": 913,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n14",
+    "text": "A data de pagamento do primeiro lote de restituição é 29/05/2026 [076].",
+    "cited": [
+     76
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     76,
+     75,
+     26,
+     63,
+     270
+    ],
+    "calls": 1,
+    "tokens": 1745,
+    "tools": [],
+    "ms": 684,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n15",
+    "text": "Os criptoativos devem ser declarados na ficha Bens e Direitos quando o valor de aquisição de cada tipo de criptoativo for igual ou superior a R$ 5.000,00 (cinco mil reais) [473].",
+    "cited": [
+     473
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     473,
+     480
+    ],
+    "calls": 1,
+    "tokens": 2079,
+    "tools": [],
+    "ms": 896,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n16",
+    "text": "Você precisa aplicar o produto da venda na aquisição de imóveis residenciais localizados no País no prazo de 180 dias contado da celebração do contrato [575]. A contagem do prazo de 180 dias inclui a data da celebração do contrato [575]. No caso de venda de mais de 1 (um) imóvel, o prazo de 180 dias é contado a partir da data da celebração do contrato relativo à primeira operação [575].",
+    "cited": [
+     575
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     576,
+     575,
+     598
+    ],
+    "calls": 1,
+    "tokens": 2219,
+    "tools": [],
+    "ms": 976,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d01",
+    "text": "Não há limitação quanto à idade [006].",
+    "cited": [
+     6
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     6,
+     11,
+     52,
+     1,
+     23
+    ],
+    "calls": 1,
+    "tokens": 1424,
+    "tools": [],
+    "ms": 986,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d02",
+    "text": "O contribuinte pode retificar a declaração visando à troca de opção por outra forma de tributação somente até 29 de maio de 2026 [046].",
+    "cited": [
+     46
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     47,
+     43,
+     46,
+     51,
+     44
+    ],
+    "calls": 1,
+    "tokens": 1526,
+    "tools": [],
+    "ms": 918,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d03",
+    "text": "Sim. Extingue-se em cinco anos o direito de o contribuinte retificar a declaração de rendimentos, inclusive quanto ao valor dos bens e direitos declarados [044]. \n\nSobre o termo inicial da contagem do prazo de 5 anos:\na) se não tiver havido algum imposto pago antecipadamente (Carnê-leão, Imposto complementar, IRRF): 5 (cinco) anos a partir de 1º de janeiro do ano seguinte ao ano inicial de apresentação da declaração;\nb) se tiver havido algum imposto pago antecipadamente: 5 (cinco) anos a partir do ano inicial de apresentação da declaração [044].",
+    "cited": [
+     44
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     44,
+     43,
+     51,
+     47,
+     54
+    ],
+    "calls": 1,
+    "tokens": 1340,
+    "tools": [],
+    "ms": 1172,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d04",
+    "text": "Não. Somente podem ser aceitos laudos periciais expedidos por instituições públicas, independentemente da vinculação ao Sistema Único de Saúde (SUS), e os laudos emitidos por entidades privadas não atendem à exigência legal, ainda que o atendimento decorra de convênio referente ao SUS [237].",
+    "cited": [
+     237
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     237,
+     285,
+     282
+    ],
+    "calls": 1,
+    "tokens": 2136,
+    "tools": [],
+    "ms": 1397,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d05",
+    "text": "Os prêmios em dinheiro obtidos em loterias tradicionais (como mega-sena, lotofácil, quina), concursos desportivos em geral (exceto amortização e resgate de ações), concursos de prognósticos desportivos e sorteios de benefícios a aplicadores em títulos de capitalização (sem amortização antecipada) são tributados exclusivamente na fonte à alíquota de 30% [317].\n\nOs benefícios líquidos pagos a aplicadores em títulos de capitalização por sorteio, com amortização antecipada, sujeitam-se ao imposto exclusivamente na fonte à alíquota de 25% [317].\n\nEm outros concursos (que não sejam de prognósticos desportivos nem desportivos em geral), o imposto incide na fonte pela tabela progressiva mensal, como antecipação do devido na Declaração de Ajuste Anual (DAA) [317].\n\nNos concursos artísticos, desportivos, científicos, literários ou assemelhados com vinculação à avaliação de desempenho (assumindo aspecto de remuneração do trabalho, em dinheiro, bens ou serviços), o imposto incide na fonte pela tabela progressiva mensal, como antecipação do devido na DAA [317].",
+    "cited": [
+     317
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     317,
+     319,
+     318
+    ],
+    "calls": 1,
+    "tokens": 1673,
+    "tools": [],
+    "ms": 1451,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d06",
+    "text": "A indenização recebida por dano moral por pessoa física, paga por pessoa física ou jurídica em virtude de acordo ou decisão judicial, não é tributada pelo Imposto sobre a Renda na fonte, nem na Declaração de Ajuste Anual - DAA [228]. A fonte pagadora está desobrigada de reter o tributo [228]. Para declarar esses rendimentos, a pessoa física deve informá-los no campo “Outros” da Ficha “Rendimentos Isentos e Não Tributáveis”, com especificação da natureza do rendimento [228].",
+    "cited": [
+     228
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     228,
+     295,
+     225,
+     289,
+     242
+    ],
+    "calls": 1,
+    "tokens": 1470,
+    "tools": [],
+    "ms": 921,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d07",
+    "text": "As pensões pagas por liberalidade, ou seja, sem decisão judicial, acordo homologado judicialmente ou em decorrência de escritura pública, não são dedutíveis por falta de previsão legal [363].",
+    "cited": [
+     363
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     363,
+     360,
+     364,
+     359,
+     362
+    ],
+    "calls": 1,
+    "tokens": 1540,
+    "tools": [],
+    "ms": 824,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d08",
+    "text": "Os rendimentos obtidos em conta de depósito de poupança pela pessoa física estão isentos do imposto sobre a renda, ainda que em virtude de decisão judicial que tenha determinado a correção dos valores depositados por índice diferente do fixado pela autoridade monetária [741]. Tratando-se de conta de depósito de poupança em nome de menor, cujo depósito é efetuado em decorrência de ordem judicial, os rendimentos auferidos também são isentos do imposto sobre a renda [742].",
+    "cited": [
+     741,
+     742
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     741,
+     742,
+     324,
+     159,
+     150
+    ],
+    "calls": 1,
+    "tokens": 1546,
+    "tools": [],
+    "ms": 1400,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d09",
+    "text": "Qualquer contribuinte pode optar pelo desconto simplificado [014].",
+    "cited": [
+     14
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     14,
+     12,
+     15,
+     16,
+     20
+    ],
+    "calls": 1,
+    "tokens": 1264,
+    "tools": [],
+    "ms": 723,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d10",
+    "text": "O valor pago a título de férias, acrescido do terço constitucional, deve ser tributado no mês de seu pagamento e em separado de qualquer outro rendimento pago no mês [178]. Na Declaração de Ajuste Anual, as férias são tributadas em conjunto com os demais rendimentos [178].\n\nNão são tributados pelo Imposto sobre a Renda na fonte, nem na Declaração de Ajuste Anual, os pagamentos efetuados sob as rubricas de férias não gozadas (integrais, proporcionais ou em dobro) convertidas em pecúnia, e de adicional de um terço constitucional quando agregado a pagamento de férias, por ocasião da extinção do contrato de trabalho (rescisão, aposentadoria ou exoneração), por necessidade do serviço ou conveniência do empregado ou servidor [178]. Também não são tributados os pagamentos efetuados sob a rubrica de abono pecuniário relativo à conversão de 1/3 do período de férias nos termos da CLT [178].",
+    "cited": [
+     178
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     178
+    ],
+    "calls": 1,
+    "tokens": 2474,
+    "tools": [],
+    "ms": 1606,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c01",
+    "text": "Não há limitação quanto à idade para a obrigatoriedade ou dispensa de apresentação da Declaração de Ajuste Anual [006].",
+    "cited": [
+     6
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     280,
+     6,
+     519,
+     277,
+     52
+    ],
+    "calls": 1,
+    "tokens": 1759,
+    "tools": [],
+    "ms": 988,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c02",
+    "text": "Sim, o filho pode ser considerado dependente até 24 anos de idade se ainda estiver cursando estabelecimento de ensino superior ou escola técnica de segundo grau [340], [350], [420].",
+    "cited": [
+     340,
+     350,
+     420
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     350,
+     420,
+     341,
+     356,
+     340
+    ],
+    "calls": 1,
+    "tokens": 1763,
+    "tools": [],
+    "ms": 746,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c03",
+    "text": "Sim, são dedutíveis da base de cálculo do IRPF as despesas comprovadas com sessões do método Pilates quando o serviço for realizado por profissional fisioterapeuta, haja a comprovação dessa condição mediante documento hábil e idôneo, e desde que atendidos os demais requisitos normativos de dedutibilidade [383], [331].",
+    "cited": [
+     383,
+     331
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     383,
+     331,
+     386,
+     384
+    ],
+    "calls": 1,
+    "tokens": 1648,
+    "tools": [],
+    "ms": 838,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c04",
+    "text": "Os gastos com medicamentos não podem ser deduzidos como despesas médicas, a não ser que integrem a conta emitida pelo estabelecimento hospitalar [392].",
+    "cited": [
+     392
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     392,
+     381,
+     371,
+     395,
+     368
+    ],
+    "calls": 1,
+    "tokens": 942,
+    "tools": [],
+    "ms": 696,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c05",
+    "text": "Não são dedutíveis os pagamentos de aulas de idioma estrangeiro e natação por falta de previsão legal [415].",
+    "cited": [
+     415
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     407,
+     415,
+     420,
+     400,
+     408
+    ],
+    "calls": 1,
+    "tokens": 1384,
+    "tools": [],
+    "ms": 845,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c06",
+    "text": "Sim. Os gastos com creche podem ser deduzidos como despesas com instrução, obedecidos aos limites e às condições legais [406]. A educação infantil compreende as despesas efetuadas com a educação de crianças de até cinco anos de idade, oferecida em creches ou entidades equivalentes e pré-escolas [403].",
+    "cited": [
+     406,
+     403
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     403,
+     406,
+     564,
+     424,
+     407
+    ],
+    "calls": 1,
+    "tokens": 1115,
+    "tools": [],
+    "ms": 1180,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c07",
+    "text": "Não é tributada pelo Imposto sobre a Renda na fonte, nem na Declaração de Ajuste Anual - DAA, a indenização recebida a título de dano moral por pessoa física, paga por pessoa física ou jurídica, em virtude de acordo ou decisão judicial [228].",
+    "cited": [
+     228
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     295,
+     289,
+     228,
+     294,
+     218
+    ],
+    "calls": 1,
+    "tokens": 1592,
+    "tools": [],
+    "ms": 895,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c08",
+    "text": "Os prêmios em dinheiro obtidos em loterias tradicionais (tais como mega-sena, lotofácil, quina) sujeitam-se à incidência do imposto sobre a renda exclusivamente na fonte à alíquota de 30% [317].",
+    "cited": [
+     317
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     319,
+     318,
+     317,
+     643
+    ],
+    "calls": 1,
+    "tokens": 2149,
+    "tools": [],
+    "ms": 1079,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c09",
+    "text": "O gasto com colocação e manutenção de aparelho ortodôntico é dedutível como despesa médica, desde que comprovado [378]. No entanto, o gasto com a aquisição do aparelho ortodôntico somente é dedutível se integrar a conta emitida pelo profissional [378]. \n\nNão encontrei isso no Perguntas e Respostas do IRPF 2026 sobre a inclusão específica do filho como dependente para essa dedução odontológica (o manual apenas menciona regra sobre dependentes e despesas de instrução em casos de divórcio na pergunta [408]).",
+    "cited": [
+     378,
+     408
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     378,
+     377,
+     376,
+     408,
+     388
+    ],
+    "calls": 1,
+    "tokens": 1149,
+    "tools": [],
+    "ms": 943,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c10",
+    "text": "Não, o rendimento recebido a título de pensão alimentícia em face das normas de Direito de Família, decorrente de decisão judicial, inclusive a prestação de alimentos provisionais, de acordo homologado judicialmente ou de escritura pública de acordo com o Código de Processo Civil, não está sujeito ao recolhimento mensal obrigatório (carnê-leão) [129] [266].",
+    "cited": [
+     129,
+     266
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     267,
+     268,
+     266,
+     173,
+     129
+    ],
+    "calls": 1,
+    "tokens": 2204,
+    "tools": [],
+    "ms": 1257,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "c11",
+    "text": "As pensões pagas por liberalidade, ou seja, sem decisão judicial, acordo homologado judicialmente ou em decorrência de escritura pública, não são dedutíveis por falta de previsão legal [363].",
+    "cited": [
+     363
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     331,
+     366,
+     363,
+     340,
+     346
+    ],
+    "calls": 1,
+    "tokens": 1779,
+    "tools": [],
+    "ms": 877,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c12",
+    "text": "Para o transporte de passageiros (inclusive por aplicativos), o rendimento bruto tributável é de, no mínimo, 60% do valor total recebido [192]. Os 40% restantes devem ser informados na linha específica da Ficha de Rendimentos Isentos e Não Tributáveis [192].",
+    "cited": [
+     192
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     192,
+     217,
+     181,
+     163
+    ],
+    "calls": 1,
+    "tokens": 2079,
+    "tools": [],
+    "ms": 981,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c13",
+    "text": "O imposto incidente sobre o valor do prêmio líquido que exceder o valor da primeira faixa da tabela de incidência anual do IRPF (para o ano-calendário de 2025, o valor de R$ 28.467,20) é de 15% (quinze por cento) [318].",
+    "cited": [
+     318
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     318,
+     706,
+     643
+    ],
+    "calls": 1,
+    "tokens": 2231,
+    "tools": [],
+    "ms": 955,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c14",
+    "text": "O valor recebido em restituição do imposto sobre a renda não se caracteriza como rendimento tributável [297].",
+    "cited": [
+     297
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     297,
+     206,
+     735,
+     141,
+     250
+    ],
+    "calls": 1,
+    "tokens": 1203,
+    "tools": [],
+    "ms": 816,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c15",
+    "text": "Considera-se isento do imposto sobre a renda, na fonte e na Declaração de Ajuste Anual, o lucro do titular de empresa optante pelo Simples Nacional na condição de Microempreendedor Individual (MEI) [184]. A isenção fica limitada ao valor resultante da aplicação, sobre a receita bruta mensal ou total anual, dos percentuais de presunção da base de cálculo do IRPJ, salvo se mantiver escrituração contábil que evidencie lucro superior [184]. Não são considerados isentos os valores pagos ao MEI correspondentes a pró-labore, aluguéis ou serviços prestados [184].",
+    "cited": [
+     184
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     184,
+     245,
+     183
+    ],
+    "calls": 1,
+    "tokens": 2496,
+    "tools": [],
+    "ms": 1276,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c16",
+    "text": "Sim. Uma vez que o pagamento ocorreu já no ano-calendário de 2025, essa despesa poderá ser deduzida na Declaração de Ajuste Anual do exercício de 2026, obedecidos aos limites e condições legais [425]. O manual ressalta que, caso o contribuinte não deduza essa despesa na DAA do exercício de 2026, não poderá fazê-lo na DAA do exercício de 2027, pois, para efeito de imposto devido pelas pessoas físicas, o que importa é o momento do desembolso [425].",
+    "cited": [
+     425
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     425,
+     420,
+     400,
+     408,
+     564
+    ],
+    "calls": 1,
+    "tokens": 1666,
+    "tools": [],
+    "ms": 1174,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c17",
+    "text": "Pagamentos de horas extras configuram-se como rendimentos do trabalho, sujeitando-se à retenção na fonte e à tributação na Declaração de Ajuste Anual - DAA, mesmo quando realizados em virtude de acordo coletivo mediado por sindicato [186].",
+    "cited": [
+     186
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     186,
+     730,
+     291,
+     172,
+     163
+    ],
+    "calls": 1,
+    "tokens": 1789,
+    "tools": [],
+    "ms": 869,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c18",
+    "text": "Sim, a restituição pode ser creditada por meio de PIX, utilizando necessariamente a chave CPF do titular da declaração [070].",
+    "cited": [
+     70
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     122,
+     74,
+     75,
+     73,
+     70
+    ],
+    "calls": 1,
+    "tokens": 1783,
+    "tools": [],
+    "ms": 974,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c19",
+    "text": "Somente é dedutível a título de pensão o valor pago como pensão alimentícia [360]. As quantias pagas decorrentes de sentença judicial para cobertura de despesas médicas e com instrução, destacadas da pensão, são dedutíveis sob a forma de despesas médicas e despesas com instrução dos alimentandos, desde que obedecidos os requisitos e limites legais [360]. Outros valores estipulados na sentença, como aluguéis, condomínio, transporte e previdência complementar, não são dedutíveis [360].",
+    "cited": [
+     360
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     360,
+     358,
+     224,
+     365,
+     279
+    ],
+    "calls": 1,
+    "tokens": 2105,
+    "tools": [],
+    "ms": 1050,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c20",
+    "text": "O contribuinte obrigado a apresentar a declaração, no caso de apresentação após o prazo previsto ou da não apresentação, fica sujeito ao pagamento de multa por atraso calculada da seguinte forma:\n- Existindo imposto devido, multa de 1% ao mês-calendário ou fração de atraso, incidente sobre o imposto devido (ainda que integralmente pago), observados os valores mínimo de R$ 165,74 e máximo de 20% do imposto devido [024].\n- Inexistindo imposto devido, multa de R$ 165,74 [024].",
+    "cited": [
+     24
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     24,
+     730,
+     57
+    ],
+    "calls": 1,
+    "tokens": 2323,
+    "tools": [],
+    "ms": 1113,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m01",
+    "text": "Não, a isenção relativa a doença grave não desobriga, por si só, o contribuinte de apresentar a declaração [011]. \n\nPara o reconhecimento da isenção do imposto sobre a renda relativo a proventos de aposentadoria, reforma e pensão, a doença grave deve ser comprovada mediante laudo pericial emitido por serviço médico oficial da União, dos estados, do Distrito Federal ou dos municípios [282].",
+    "cited": [
+     11,
+     282
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     11,
+     282,
+     285,
+     286
+    ],
+    "calls": 1,
+    "tokens": 2333,
+    "tools": [],
+    "ms": 1234,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m02",
+    "text": "Não, não é possível autorizar o crédito da restituição em conta de terceiros [072]. O crédito da restituição só pode ser efetuado em conta-corrente, conta pagamento ou de poupança de titularidade do contribuinte (sendo possível utilizar conta conjunta) [070] [072].",
+    "cited": [
+     72,
+     70
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     72,
+     71,
+     70,
+     73
+    ],
+    "calls": 1,
+    "tokens": 1150,
+    "tools": [],
+    "ms": 762,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m03",
+    "text": "Sim, o contribuinte que possui mais de uma fonte pagadora pode optar pelo desconto simplificado [015]. O desconto simplificado corresponde à dedução de 20% do valor dos rendimentos tributáveis na Declaração de Ajuste Anual, limitado a R$ 16.754,34 [012].",
+    "cited": [
+     15,
+     12
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     12,
+     20,
+     13,
+     15,
+     14
+    ],
+    "calls": 1,
+    "tokens": 1517,
+    "tools": [],
+    "ms": 1376,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m04",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026 sobre poder declarar mesmo não sendo obrigado. \n\nEm relação à obrigatoriedade, está obrigada a apresentar a declaração a pessoa física que recebeu rendimentos tributáveis, sujeitos ao ajuste na declaração, cuja soma foi superior a R$ 35.584,00 [001]. O manual não trata de outras condições de obrigatoriedade além das mencionadas.",
+    "cited": [
+     1
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     1,
+     181,
+     192,
+     183
+    ],
+    "calls": 1,
+    "tokens": 2239,
+    "tools": [],
+    "ms": 1269,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m05",
+    "text": "O contribuinte obrigado a apresentar a declaração, no caso de apresentação após o prazo ou de não apresentação, fica sujeito ao pagamento de multa por atraso calculada da seguinte forma: existindo imposto devido, multa de 1% ao mês-calendário ou fração de atraso, incidente sobre o imposto devido, observados os valores mínimo de R$ 165,74 e máximo de 20% do imposto devido; inexistindo imposto devido, multa de R$ 165,74 [024].\n\nNão é devida a multa por atraso na entrega da declaração para quem está desobrigado de apresentar a Declaração de Ajuste Anual [025].",
+    "cited": [
+     24,
+     25
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     24,
+     25,
+     57
+    ],
+    "calls": 1,
+    "tokens": 2283,
+    "tools": [],
+    "ms": 1246,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m06",
+    "text": "Qualquer contribuinte pode optar pelo desconto simplificado [014]. No entanto, quem opta por ele não pode deduzir os gastos com os Fundos da Criança e do Adolescente, pois o desconto simplificado substitui todas as deduções a que o contribuinte tem direito, inclusive as diminuídas diretamente do imposto [456].",
+    "cited": [
+     14,
+     456
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     456,
+     14,
+     12,
+     458,
+     17
+    ],
+    "calls": 1,
+    "tokens": 1820,
+    "tools": [],
+    "ms": 1058,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m07",
+    "text": "Não. O cônjuge ou companheiro que possui apenas o bem imóvel comum não faz jus à isenção de alienação do único imóvel se o outro cônjuge possui outro imóvel, pois o bem adquirido na constância do casamento em regime de comunhão parcial de bens pertence a ambos e, para a apuração da isenção, deve ser observado se qualquer um dos cônjuges possui outro imóvel [672]. \n\nA isenção aplica-se ao ganho de capital auferido na alienação do único imóvel cujo valor de alienação seja de até R$ 440.000,00, desde que não tenha sido realizada qualquer outra alienação de imóvel, tributada ou não, nos últimos cinco anos; no caso de união estável ou comunhão parcial, o limite de isenção aplica-se em relação ao valor total do imóvel alienado [683].",
+    "cited": [
+     672,
+     683
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     684,
+     685,
+     683,
+     594,
+     672
+    ],
+    "calls": 1,
+    "tokens": 1995,
+    "tools": [],
+    "ms": 1930,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m08",
+    "text": "Sim, o contribuinte pode retificar a declaração a fim de se beneficiar da isenção legal sobre os proventos de aposentadoria ou pensão, até o valor permitido na legislação [052]. \n\nAté 29 de maio de 2026, a declaração retificadora deve ser enviada pela Internet, mediante a utilização do PGD ou mediante acesso ao serviço “Meu Imposto de Renda” (disponível no site da RFB na Internet ou em aplicativos da RFB para dispositivos móveis, tais como tablets e smartphones) [045]. Após 29 de maio de 2026, além dos meios citados acima, também pode ser apresentada em mídia removível nas unidades da Secretaria Especial da Receita Federal do Brasil - RFB, sem a interrupção do pagamento do imposto [045].",
+    "cited": [
+     52,
+     45
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     52,
+     278,
+     281,
+     45,
+     173
+    ],
+    "calls": 1,
+    "tokens": 1897,
+    "tools": [],
+    "ms": 1526,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m09",
+    "text": "Para a 2ª quota (vencimento em 30/06/2026), o valor a recolher é calculado pelo valor apurado mais 1% [064].",
+    "cited": [
+     64
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     63,
+     50,
+     66,
+     64
+    ],
+    "calls": 1,
+    "tokens": 2199,
+    "tools": [],
+    "ms": 1092,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m10",
+    "text": "O prazo para que o contribuinte possa pleitear a restituição do imposto pago indevidamente ou em valor maior que o devido extingue-se após o transcurso do prazo de 5 anos, contados da data da extinção do crédito tributário (tratando-se de rendimentos sujeitos à tributação exclusiva na fonte, não tributáveis ou isentos), ou tendo o termo inicial em 31 de dezembro do ano-calendário correspondente no caso de rendimentos recebidos ao longo do ano-calendário sujeitos ao ajuste anual com antecipação do imposto mediante retenção [069].\n\nO direito de o contribuinte retificar a declaração de rendimentos extingue-se em cinco anos, inclusive quanto ao valor dos bens e direitos declarados [044]. O termo inicial da contagem desse prazo de 5 anos é:\na) se não tiver havido algum imposto pago antecipadamente (Carnê-leão, Imposto complementar, IRRF): 5 anos a partir de 1º de janeiro do ano seguinte ao ano inicial de apresentação da declaração;\nb) se tiver havido algum imposto pago antecipadamente: 5 anos a partir do ano inicial de apresentação da declaração [044].",
+    "cited": [
+     69,
+     44
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     44,
+     51,
+     43,
+     48,
+     69
+    ],
+    "calls": 1,
+    "tokens": 2081,
+    "tools": [],
+    "ms": 1327,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m11",
+    "text": "Os pagamentos de aulas de natação não são dedutíveis por falta de previsão legal [415]. \n\nO manual não trata do limite da dedução com educação.",
+    "cited": [
+     415
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     415,
+     407,
+     402,
+     400,
+     403
+    ],
+    "calls": 1,
+    "tokens": 1138,
+    "tools": [],
+    "ms": 887,
+    "kind": "multi-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m12",
+    "text": "Sim, o filho com 23 anos que esteja cursando estabelecimento de ensino superior pode ser considerado dependente [340] [350]. \n\nSua companheira, com quem você viva há mais de 5 anos, também pode ser considerada dependente [340].",
+    "cited": [
+     340,
+     350
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     353,
+     340,
+     350,
+     420,
+     341
+    ],
+    "calls": 1,
+    "tokens": 1772,
+    "tools": [],
+    "ms": 1122,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "o01",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     207,
+     61,
+     574,
+     308,
+     706
+    ],
+    "calls": 1,
+    "tokens": 2013,
+    "tools": [],
+    "ms": 712,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o02",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     66,
+     35,
+     241,
+     737,
+     642
+    ],
+    "calls": 1,
+    "tokens": 1947,
+    "tools": [],
+    "ms": 1149,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o03",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     184,
+     126,
+     5,
+     194,
+     183
+    ],
+    "calls": 1,
+    "tokens": 2018,
+    "tools": [],
+    "ms": 1081,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o04",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     669,
+     530,
+     740,
+     549,
+     531
+    ],
+    "calls": 1,
+    "tokens": 1888,
+    "tools": [],
+    "ms": 1484,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o05",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     725,
+     603,
+     724,
+     707,
+     671
+    ],
+    "calls": 1,
+    "tokens": 1920,
+    "tools": [],
+    "ms": 763,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o06",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     52,
+     280,
+     278,
+     279,
+     133
+    ],
+    "calls": 1,
+    "tokens": 1687,
+    "tools": [],
+    "ms": 687,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o07",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     225,
+     610,
+     595,
+     89,
+     265
+    ],
+    "calls": 1,
+    "tokens": 1703,
+    "tools": [],
+    "ms": 1086,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o08",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     741,
+     742,
+     1,
+     10,
+     266
+    ],
+    "calls": 1,
+    "tokens": 1771,
+    "tools": [],
+    "ms": 681,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o09",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     441,
+     255,
+     429,
+     265,
+     66
+    ],
+    "calls": 1,
+    "tokens": 1514,
+    "tools": [],
+    "ms": 944,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o10",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     22,
+     107,
+     21,
+     1,
+     35
+    ],
+    "calls": 1,
+    "tokens": 1522,
+    "tools": [],
+    "ms": 1715,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o11",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     643,
+     61,
+     574,
+     706
+    ],
+    "calls": 1,
+    "tokens": 2233,
+    "tools": [],
+    "ms": 1011,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   }
+  ],
+  "agent": [
+   {
+    "id": "n01",
+    "text": "O limite de rendimentos tributáveis sujeitos ao ajuste na declaração recebidos em 2025 que obriga a apresentar a Declaração de Ajuste Anual referente ao exercício de 2026 é superior a R$ 35.584,00 [001].",
+    "cited": [
+     1
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     38,
+     1,
+     26,
+     61
+    ],
+    "calls": 1,
+    "tokens": 2691,
+    "tools": [],
+    "ms": 967,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n02",
+    "text": "A Declaração de Ajuste Anual do exercício de 2026 pode ser transmitida até as 23h59min59s (vinte e três horas, cinquenta e nove minutos e cinquenta e nove segundos), horário de Brasília, do dia 29 de maio de 2026 [037].",
+    "cited": [
+     37
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     37,
+     26,
+     40,
+     28,
+     33
+    ],
+    "calls": 1,
+    "tokens": 2291,
+    "tools": [],
+    "ms": 1114,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "n03",
+    "text": "A multa mínima por atraso na entrega da Declaração de Ajuste Anual é de R$ 165,74, nos casos em que não há imposto devido [024]. Se houver imposto devido, a multa é de 1% ao mês-calendário ou fração de atraso sobre o imposto devido, observando o valor mínimo de R$ 165,74 e o máximo de 20% do imposto devido [024].",
+    "cited": [
+     24
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     24,
+     25,
+     57
+    ],
+    "calls": 1,
+    "tokens": 2545,
+    "tools": [],
+    "ms": 1039,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n04",
+    "text": "O saldo do imposto apurado na Declaração de Ajuste Anual pode ser pago em até 8 (oito) quotas mensais e sucessivas [063].",
+    "cited": [
+     63
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     63,
+     51,
+     50,
+     66
+    ],
+    "calls": 1,
+    "tokens": 2214,
+    "tools": [],
+    "ms": 896,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n05",
+    "text": "O valor mínimo de cada quota do imposto é de R$ 50,00 [063].",
+    "cited": [
+     63
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     63,
+     50,
+     732,
+     292
+    ],
+    "calls": 1,
+    "tokens": 1967,
+    "tools": [],
+    "ms": 988,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n06",
+    "text": "O limite anual individual para a dedução de despesas com instrução é de R$ 3.561,50 para o ano-calendário de 2025 [401].",
+    "cited": [
+     401
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     401,
+     402,
+     411,
+     408,
+     407
+    ],
+    "calls": 1,
+    "tokens": 1576,
+    "tools": [],
+    "ms": 949,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n07",
+    "text": "O valor máximo do desconto simplificado na Declaração de Ajuste Anual é limitado a R$ 16.754,34 [012].",
+    "cited": [
+     12
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     12,
+     14,
+     18,
+     20,
+     267
+    ],
+    "calls": 1,
+    "tokens": 1867,
+    "tools": [],
+    "ms": 1042,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n08",
+    "text": "A faixa de isenção (alíquota zero) da tabela progressiva anual para o ano-calendário de 2025 é para a base de cálculo de até R$ 28.467,20 [061].",
+    "cited": [
+     61
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     61,
+     267,
+     446,
+     250
+    ],
+    "calls": 1,
+    "tokens": 2867,
+    "tools": [],
+    "ms": 1016,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n09",
+    "text": "Os ganhos líquidos auferidos em operações day trade realizadas em bolsas de valores, de mercadorias, de futuros e assemelhadas são tributados à alíquota de 20% [706].",
+    "cited": [
+     706
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     706,
+     712,
+     714,
+     715,
+     574
+    ],
+    "calls": 1,
+    "tokens": 1869,
+    "tools": [],
+    "ms": 1153,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n10",
+    "text": "Você pode vender até R$ 20.000,00 em ações no mês, no mercado à vista de bolsas de valores ou mercado de balcão, com isenção do imposto sobre a renda sobre os ganhos líquidos [0707].",
+    "cited": [],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     707,
+     729,
+     640,
+     706,
+     731
+    ],
+    "calls": 1,
+    "tokens": 2422,
+    "tools": [],
+    "ms": 1351,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "n11",
+    "text": "A alíquota aplicável sobre a parcela dos ganhos que não ultrapassar R$ 5.000.000,00 é de 15% [574] [643].",
+    "cited": [
+     574,
+     643
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     574,
+     643,
+     649
+    ],
+    "calls": 1,
+    "tokens": 2859,
+    "tools": [],
+    "ms": 1089,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n12",
+    "text": "O valor de alienação do único imóvel para ter direito à isenção do ganho de capital é de até R$ 440.000,00 [683] [684].",
+    "cited": [
+     683,
+     684
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     684,
+     685,
+     575,
+     594,
+     683
+    ],
+    "calls": 1,
+    "tokens": 2171,
+    "tools": [],
+    "ms": 1076,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n13",
+    "text": "A parcela isenta por mês dos proventos de aposentadoria, reserva remunerada, reforma ou pensão para o contribuinte com 65 anos ou mais é de até R$ 1.903,98, a partir do mês em que completar essa idade, no ano-calendário de 2025 [052] [277].",
+    "cited": [
+     52,
+     277
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     52,
+     281,
+     277,
+     278,
+     280
+    ],
+    "calls": 1,
+    "tokens": 2316,
+    "tools": [],
+    "ms": 1810,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n14",
+    "text": "A data de pagamento do primeiro lote de restituição de 2026 é 29/05/2026 [076].",
+    "cited": [
+     76
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     76,
+     75,
+     26,
+     63,
+     270
+    ],
+    "calls": 1,
+    "tokens": 2070,
+    "tools": [],
+    "ms": 1079,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n15",
+    "text": "Os criptoativos devem ser informados na ficha Bens e Direitos quando o valor de aquisição de cada tipo de criptoativo for igual ou superior a R$ 5.000,00 (cinco mil reais) [473].",
+    "cited": [
+     473
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     473,
+     480
+    ],
+    "calls": 1,
+    "tokens": 2398,
+    "tools": [],
+    "ms": 1019,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n16",
+    "text": "Para ter direito à isenção do ganho de capital, você deve aplicar o produto da venda na aquisição de imóveis residenciais localizados no País no prazo de 180 dias, contado a partir da celebração do contrato (incluindo esta data) [575]. No caso de venda de mais de 1 imóvel, o prazo de 180 dias é contado a partir da data da celebração do contrato relativo à primeira operação [575].",
+    "cited": [
+     575
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     576,
+     575,
+     598
+    ],
+    "calls": 1,
+    "tokens": 2534,
+    "tools": [],
+    "ms": 1205,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d01",
+    "text": "Não há limitação quanto à idade para a obrigatoriedade ou dispensa de apresentação da Declaração de Ajuste Anual [006].",
+    "cited": [
+     6
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     6,
+     11,
+     52,
+     1,
+     23
+    ],
+    "calls": 1,
+    "tokens": 1762,
+    "tools": [],
+    "ms": 1148,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d02",
+    "text": "O contribuinte pode retificar a declaração visando à troca de opção por outra forma de tributação somente até 29 de maio de 2026 [046].",
+    "cited": [
+     46
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     47,
+     43,
+     46,
+     51,
+     44
+    ],
+    "calls": 1,
+    "tokens": 1845,
+    "tools": [],
+    "ms": 1826,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d03",
+    "text": "Sim. Extingue-se em cinco anos o direito de o contribuinte retificar a declaração de rendimentos, inclusive quanto ao valor dos bens e direitos declarados [044].",
+    "cited": [
+     44
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     44,
+     43,
+     51,
+     47,
+     54
+    ],
+    "calls": 1,
+    "tokens": 1550,
+    "tools": [],
+    "ms": 1854,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d04",
+    "text": "Não. Somente podem ser aceitos laudos periciais expedidos por instituições públicas, independentemente da vinculação destas ao Sistema Único de Saúde (SUS), de modo que os laudos expedidos por entidades privadas não atendem à exigência legal, ainda que o atendimento decorra de convênio referente ao SUS [237].",
+    "cited": [
+     237
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     237,
+     285,
+     282
+    ],
+    "calls": 1,
+    "tokens": 2459,
+    "tools": [],
+    "ms": 941,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d05",
+    "text": "Os prêmios em dinheiro são tributados da seguinte forma:\n\n* **Loterias tradicionais (como mega-sena, lotofácil, quina), concursos desportivos em geral (exceto amortização e resgate de ações), concursos de prognósticos desportivos e sorteios de benefícios a aplicadores em títulos de capitalização (sem amortização antecipada):** tributados exclusivamente na fonte à alíquota de 30% [317].\n* **Benefícios líquidos pagos em títulos de capitalização com amortização antecipada:** tributados exclusivamente na fonte à alíquota de 25% [317].\n* **Jogos de bingo:** tributados exclusivamente na fonte à alíquota de 30% [319].\n* **Loterias de apostas de quota fixa (*bets*, eventos reais de temática esportiva, eventos virtuais de jogos on-line) e *fantasy sport*:** sujeitos à tributação definitiva sobre os prêmios líquidos [318].\n* **Demais concursos (quando não são de prognósticos desportivos ou desportivos em geral):** o imposto incide na fonte conforme a tabela progressiva mensal, como antecipação do imposto devido na Declaração de Ajuste Anual [317].\n* **Concursos artísticos, desportivos, científicos, literários ou assemelhados (com vinculação à avaliação de desempenho, assumindo caráter de remuneração do trabalho, em dinheiro, bens ou serviços):** o imposto incide na fonte conforme a tabela progressiva mensal, como antecipação do imposto devido na Declaração de Ajuste Anual [317].",
+    "cited": [
+     317,
+     319,
+     318
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     317,
+     319,
+     318
+    ],
+    "calls": 1,
+    "tokens": 2084,
+    "tools": [],
+    "ms": 2061,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d06",
+    "text": "A indenização recebida a título de dano moral — paga por pessoa física ou jurídica, em virtude de acordo ou decisão judicial — não é tributada pelo Imposto sobre a Renda na fonte, nem na Declaração de Ajuste Anual (DAA) [228]. A fonte pagadora está desobrigada de reter o tributo [228]. \n\nPara declarar esses rendimentos, a pessoa física deve informá-los no campo “Outros” da Ficha “Rendimentos Isentos e Não Tributáveis”, com a especificação da natureza do rendimento [228].",
+    "cited": [
+     228
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     228,
+     295,
+     225,
+     289,
+     242
+    ],
+    "calls": 1,
+    "tokens": 1793,
+    "tools": [],
+    "ms": 1087,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d07",
+    "text": "As pensões pagas por liberalidade, ou seja, sem decisão judicial, acordo homologado judicialmente ou em decorrência de escritura pública, não são dedutíveis por falta de previsão legal [363].",
+    "cited": [
+     363
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     363,
+     360,
+     364,
+     359,
+     362
+    ],
+    "calls": 1,
+    "tokens": 1859,
+    "tools": [],
+    "ms": 809,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d08",
+    "text": "Os rendimentos obtidos em conta de depósito de poupança pela pessoa física estão isentos do imposto sobre a renda, ainda que em virtude de decisão judicial que tenha determinado a correção dos valores depositados por índice diferente do fixado pela autoridade monetária [741]. Tratando-se de conta de depósito de poupança em nome de menor, cujo depósito é efetuado em decorrência de ordem judicial, os rendimentos auferidos também são isentos do imposto sobre a renda [742].",
+    "cited": [
+     741,
+     742
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     741,
+     742,
+     324,
+     159,
+     150
+    ],
+    "calls": 1,
+    "tokens": 1865,
+    "tools": [],
+    "ms": 1232,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d09",
+    "text": "Qualquer contribuinte pode optar pelo desconto simplificado [014].",
+    "cited": [
+     14
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     14,
+     12,
+     15,
+     16,
+     20
+    ],
+    "calls": 1,
+    "tokens": 1583,
+    "tools": [],
+    "ms": 883,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d10",
+    "text": "O valor pago a título de férias, acrescido do adicional de um terço constitucional, deve ser tributado no mês de seu pagamento e em separado de qualquer outro rendimento pago no mês [178]. Para a determinação da base de cálculo mensal, podem ser efetuadas as deduções correspondentes a pensão alimentícia, dependentes e contribuições à previdência oficial, às entidades de previdência complementar domiciliadas no Brasil e aos Fundos de Aposentadoria Programada Individual (Fapi) [178]. Na Declaração de Ajuste Anual, as férias são tributadas em conjunto com os demais rendimentos [178].\n\nNão são tributados pelo Imposto sobre a Renda na fonte, nem na Declaração de Ajuste Anual, os pagamentos efetuados sob as rubricas de férias não gozadas (integrais, proporcionais ou em dobro) convertidas em pecúnia, e de adicional de um terço constitucional quando agregado a pagamento de férias, por ocasião da extinção do contrato de trabalho (rescisão, aposentadoria ou exoneração), por necessidade do serviço ou por conveniência do servidor ou empregado [178]. Pela mesma razão, não são tributados os pagamentos efetuados sob a rubrica de abono pecuniário relativo à conversão de 1/3 do período de férias (art. 143 da CLT) [178].",
+    "cited": [
+     178
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     178
+    ],
+    "calls": 1,
+    "tokens": 2876,
+    "tools": [],
+    "ms": 1455,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c01",
+    "text": "Não há limitação quanto à idade para a obrigatoriedade ou dispensa de apresentação da Declaração de Ajuste Anual [006].",
+    "cited": [
+     6
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     280,
+     6,
+     519,
+     277,
+     52
+    ],
+    "calls": 1,
+    "tokens": 2078,
+    "tools": [],
+    "ms": 889,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c02",
+    "text": "Sim, o filho de 23 anos que está cursando estabelecimento de ensino superior pode ser considerado dependente [340] [350].",
+    "cited": [
+     340,
+     350
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     350,
+     420,
+     341,
+     356,
+     340
+    ],
+    "calls": 1,
+    "tokens": 2068,
+    "tools": [],
+    "ms": 854,
+    "kind": "colloquial",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c03",
+    "text": "As despesas pagas com sessões do método Pilates são dedutíveis da base de cálculo do IRPF quando o serviço for realizado por profissional fisioterapeuta e haja a comprovação dessa condição mediante documento hábil e idôneo, e desde que atendidos os demais requisitos normativos de dedutibilidade [383] [331].",
+    "cited": [
+     383,
+     331
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     383,
+     331,
+     386,
+     384
+    ],
+    "calls": 1,
+    "tokens": 1965,
+    "tools": [],
+    "ms": 1114,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c04",
+    "text": "Não, gastos com medicamentos não podem ser deduzidos como despesas médicas, a não ser que integrem a conta emitida pelo estabelecimento hospitalar [392].",
+    "cited": [
+     392
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     392,
+     381,
+     371,
+     395,
+     368
+    ],
+    "calls": 1,
+    "tokens": 1262,
+    "tools": [],
+    "ms": 812,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c05",
+    "text": "Não, os pagamentos de aulas de idioma estrangeiro (como inglês) e de natação não podem ser deduzidos como despesas com instrução por falta de previsão legal [415].",
+    "cited": [
+     415
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     407,
+     415,
+     420,
+     400,
+     408
+    ],
+    "calls": 1,
+    "tokens": 1717,
+    "tools": [],
+    "ms": 962,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c06",
+    "text": "Sim. Os gastos com creche podem ser deduzidos como despesas com instrução, obedecidos aos limites e às condições legais [406]. A educação infantil, oferecida em creches ou entidades equivalentes, compreende as despesas efetuadas com a educação de crianças de até cinco anos de idade [403].",
+    "cited": [
+     406,
+     403
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     403,
+     406,
+     564,
+     424,
+     407
+    ],
+    "calls": 1,
+    "tokens": 1430,
+    "tools": [],
+    "ms": 1334,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c07",
+    "text": "Não é tributada pelo Imposto sobre a Renda na fonte, nem na Declaração de Ajuste Anual, a indenização recebida a título de dano moral por pessoa física, paga por pessoa física ou jurídica, em virtude de acordo ou decisão judicial [228].",
+    "cited": [
+     228
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     295,
+     289,
+     228,
+     294,
+     218
+    ],
+    "calls": 1,
+    "tokens": 1908,
+    "tools": [],
+    "ms": 1118,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c08",
+    "text": "Os prêmios em dinheiro obtidos em loterias tradicionais, tais como a mega-sena, sujeitam-se à incidência do imposto sobre a renda exclusivamente na fonte à alíquota de 30% [317].",
+    "cited": [
+     317
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     319,
+     318,
+     317,
+     643
+    ],
+    "calls": 1,
+    "tokens": 2462,
+    "tools": [],
+    "ms": 983,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c09",
+    "text": "Sim, o gasto com a colocação e manutenção de aparelho ortodôntico do seu filho é dedutível como despesa médica, desde que comprovado [378]. \n\nContudo, a aquisição do aparelho ortodôntico somente é dedutível se integrar a conta emitida pelo profissional [378].",
+    "cited": [
+     378
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     378,
+     377,
+     376,
+     408,
+     388
+    ],
+    "calls": 1,
+    "tokens": 1408,
+    "tools": [],
+    "ms": 960,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c10",
+    "text": "Não, o rendimento recebido a título de pensão alimentícia em face das normas de Direito de Família (decorrente de decisão judicial, inclusive a prestação de alimentos provisionais, de acordo homologado judicialmente ou de escritura pública de acordo com o Código de Processo Civil) não está sujeito ao recolhimento mensal obrigatório (carnê-leão) [129] [266].",
+    "cited": [
+     129,
+     266
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     267,
+     268,
+     266,
+     173,
+     129
+    ],
+    "calls": 1,
+    "tokens": 2523,
+    "tools": [],
+    "ms": 1640,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "c11",
+    "text": "As pensões pagas por liberalidade, ou seja, sem decisão judicial, acordo homologado judicialmente ou em decorrência de escritura pública, não são dedutíveis por falta de previsão legal [363].",
+    "cited": [
+     363
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     331,
+     366,
+     363,
+     340,
+     346
+    ],
+    "calls": 1,
+    "tokens": 2098,
+    "tools": [],
+    "ms": 1873,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c12",
+    "text": "Para o transporte de passageiros (inclusive por aplicativos), o rendimento bruto correspondente é de, no mínimo, 60% do valor total recebido [192]. Os 40% restantes devem ser informados na linha específica da Ficha de Rendimentos Isentos e Não Tributáveis, valores estes que não justificam acréscimo patrimonial [192]. Caso deseje utilizá-los para justificar acréscimo patrimonial, você deverá incluí-los integralmente como rendimentos tributáveis na Declaração de Ajuste Anual e recolher o carnê-leão em percentual superior ao mínimo [192].",
+    "cited": [
+     192
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     192,
+     217,
+     181,
+     163
+    ],
+    "calls": 1,
+    "tokens": 2470,
+    "tools": [],
+    "ms": 1076,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c13",
+    "text": "A alíquota do imposto sobre a renda incidente sobre o prêmio líquido de apostas de quota fixa é de 15% [318]. O imposto incide sobre o valor do prêmio líquido que exceder o valor da primeira faixa da tabela de incidência anual do IRPF (para o ano-calendário de 2025, esse valor foi de R$ 28.467,20) [318].",
+    "cited": [
+     318
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     318,
+     706,
+     643
+    ],
+    "calls": 1,
+    "tokens": 2573,
+    "tools": [],
+    "ms": 1387,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c14",
+    "text": "O valor recebido em restituição do imposto sobre a renda não se caracteriza como rendimento tributável [297]. Ele deve ser informado na Declaração de Ajuste Anual na ficha \"Rendimentos Isentos e Não Tributáveis\", selecionando o Tipo de Rendimento \"25 – Restituição do imposto sobre a renda de anos-calendário anteriores\" [297].",
+    "cited": [
+     297
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     297,
+     206,
+     735,
+     141,
+     250
+    ],
+    "calls": 1,
+    "tokens": 1580,
+    "tools": [],
+    "ms": 2021,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c15",
+    "text": "O lucro do Microempreendedor Individual (MEI) é considerado isento do imposto sobre a renda, na fonte e na Declaração de Ajuste Anual, até o limite do valor resultante da aplicação dos percentuais de presunção da base de cálculo do IRPJ sobre a receita bruta mensal (antecipação de fonte) ou total anual (DAA) [184]. \n\nEsse limite não se aplica caso o MEI mantenha escrituração contábil que evidencie lucro superior [184]. Além disso, os valores pagos ao MEI correspondentes a pró-labore, aluguéis ou serviços prestados não são considerados isentos e são tributáveis [184]. Os valores distribuídos relativos à parcela que exceder a isenção também são tributáveis [184].",
+    "cited": [
+     184
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     184,
+     245,
+     183
+    ],
+    "calls": 1,
+    "tokens": 2846,
+    "tools": [],
+    "ms": 2606,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c16",
+    "text": "Sim. Como o pagamento ocorreu no ano-calendário de 2025, essa despesa pode ser deduzida na Declaração de Ajuste Anual do exercício de 2026, observados os limites e condições legais [425]. Caso não deduza nessa declaração, não poderá fazê-lo na do exercício de 2027, pois o que importa para efeito de imposto devido é o momento do desembolso [425].",
+    "cited": [
+     425
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     425,
+     420,
+     400,
+     408,
+     564
+    ],
+    "calls": 1,
+    "tokens": 1952,
+    "tools": [],
+    "ms": 997,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c17",
+    "text": "Sim, os pagamentos de horas extras configuram-se como rendimentos do trabalho e sujeitam-se à retenção na fonte e à tributação na Declaração de Ajuste Anual (DAA), mesmo quando realizados em virtude de acordo coletivo mediado por sindicato [186].",
+    "cited": [
+     186
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     186,
+     730,
+     291,
+     172,
+     163
+    ],
+    "calls": 1,
+    "tokens": 2111,
+    "tools": [],
+    "ms": 1078,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c18",
+    "text": "Sim, é possível receber a restituição por PIX, utilizando necessariamente a chave CPF do titular da declaração [070]. \n\nA indicação do recebimento por PIX também serve como critério de prioridade para o recebimento das restituições [075].",
+    "cited": [
+     70,
+     75
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     122,
+     74,
+     75,
+     73,
+     70
+    ],
+    "calls": 1,
+    "tokens": 2130,
+    "tools": [],
+    "ms": 1111,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c19",
+    "text": "Somente é dedutível a título de pensão o valor pago como pensão alimentícia [360]. \n\nAs quantias pagas decorrentes de sentença judicial para cobertura de despesas médicas e com instrução, destacadas da pensão, são dedutíveis sob a forma de despesas médicas e despesas com instrução dos alimentandos, desde que obedecidos os requisitos e limites legais (observado o limite anual relativo às despesas com instrução de R$ 3.561,50) [360] [358].",
+    "cited": [
+     360,
+     358
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     360,
+     358,
+     224,
+     365,
+     279
+    ],
+    "calls": 1,
+    "tokens": 2422,
+    "tools": [],
+    "ms": 1353,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c20",
+    "text": "O contribuinte obrigado a apresentar a declaração que a entregar após o prazo previsto ou deixar de apresentá-la fica sujeito ao pagamento de multa por atraso calculada da seguinte forma [024]:\n\n- Existindo imposto devido: multa de 1% ao mês-calendário ou fração de atraso, incidente sobre o imposto devido, ainda que integralmente pago, observados o valor mínimo de R$ 165,74 e o máximo de 20% do imposto devido [024].\n- Inexistindo imposto devido: multa de R$ 165,74 [024].\n\nA multa tem por termo inicial o primeiro dia subsequente ao fixado para a apresentação da declaração e por termo final o mês da apresentação ou, no caso de não apresentação, do lançamento de ofício [024].",
+    "cited": [
+     24
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     24,
+     730,
+     57
+    ],
+    "calls": 1,
+    "tokens": 2693,
+    "tools": [],
+    "ms": 4269,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m01",
+    "text": "Não, a isenção relativa à doença grave especificada em lei não desobriga, por si só, o contribuinte de apresentar a declaração [011]. \n\nPara o reconhecimento da isenção do imposto sobre a renda relativo a proventos de aposentadoria, reforma e pensão, a doença grave deve ser comprovada mediante laudo pericial emitido por serviço médico oficial da União, dos estados, do Distrito Federal ou dos municípios [282].",
+    "cited": [
+     11,
+     282
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     11,
+     282,
+     285,
+     286
+    ],
+    "calls": 1,
+    "tokens": 2656,
+    "tools": [],
+    "ms": 1966,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m02",
+    "text": "Não, não é possível autorizar o crédito da restituição em conta de terceiros [072]. O crédito só pode ser efetuado em conta-corrente, conta pagamento ou de poupança de titularidade do contribuinte, sendo permitida também a utilização de conta conjunta ou a indicação por meio de PIX utilizando necessariamente a chave CPF do titular da declaração [070] [072].",
+    "cited": [
+     72,
+     70
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     72,
+     71,
+     70,
+     73
+    ],
+    "calls": 1,
+    "tokens": 1487,
+    "tools": [],
+    "ms": 1433,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m03",
+    "text": "Sim, o contribuinte que possui mais de uma fonte pagadora pode optar pelo desconto simplificado [015].\n\nA opção pelo desconto simplificado implica a substituição de todas as deduções admitidas na legislação tributária, correspondente à dedução de 20% do valor dos rendimentos tributáveis na Declaração de Ajuste Anual, limitado a R$ 16.754,34 [012].",
+    "cited": [
+     15,
+     12
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     12,
+     20,
+     13,
+     15,
+     14
+    ],
+    "calls": 1,
+    "tokens": 1856,
+    "tools": [],
+    "ms": 1197,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m04",
+    "text": "Sim, a pessoa física não obrigada a apresentar a Declaração de Ajuste Anual pode entregá-la facultativamente.\n\nEm relação à obrigatoriedade por rendimentos tributáveis, está obrigada a apresentar a declaração a pessoa física que, no ano-calendário de 2025, recebeu rendimentos tributáveis, sujeitos ao ajuste na declaração, cuja soma foi superior a R$ 35.584,00 [001].",
+    "cited": [
+     1
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     1,
+     181,
+     192,
+     183
+    ],
+    "calls": 1,
+    "tokens": 2559,
+    "tools": [],
+    "ms": 1104,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m05",
+    "text": "O contribuinte obrigado a apresentar a declaração, no caso de apresentação após o prazo ou de não apresentação, fica sujeito ao pagamento de multa por atraso calculada da seguinte forma:\n- existindo imposto devido, multa de 1% ao mês-calendário ou fração de atraso, incidente sobre o imposto devido (ainda que integralmente pago), com valor mínimo de R$ 165,74 e máximo de 20% do imposto devido;\n- inexistindo imposto devido, multa de R$ 165,74 [024].\n\nNão é devida a multa por atraso na entrega da declaração para quem está desobrigado de apresentar a Declaração de Ajuste Anual [025].",
+    "cited": [
+     24,
+     25
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     24,
+     25,
+     57
+    ],
+    "calls": 1,
+    "tokens": 2611,
+    "tools": [],
+    "ms": 1374,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m06",
+    "text": "Qualquer contribuinte pode optar pelo desconto simplificado [014]. \n\nContudo, quem opta pelo desconto simplificado não pode deduzir os gastos com os Fundos da Criança e do Adolescente, pois essa modalidade substitui todas as deduções a que o contribuinte tem direito na declaração, inclusive aquelas diminuídas diretamente do imposto [456].",
+    "cited": [
+     14,
+     456
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     456,
+     14,
+     12,
+     458,
+     17
+    ],
+    "calls": 1,
+    "tokens": 2145,
+    "tools": [],
+    "ms": 1375,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m07",
+    "text": "Não, você não tem direito à isenção do único imóvel [672]. Nas alienações de bens comuns decorrentes do regime de casamento ou união estável, o ganho de capital é apurado em relação ao bem como um todo, devendo ser observado se qualquer um dos cônjuges possui outro imóvel [672]. Como seu marido possui outro imóvel, o bem comum alienado está sujeito ao imposto sobre a renda sobre o ganho de capital tributável [672]. \n\nA isenção do ganho de capital na alienação do único imóvel aplica-se quando o valor de alienação for de até R$ 440.000,00, desde que o titular não possua outros imóveis e não tenha realizado nenhuma outra alienação de imóvel nos últimos cinco anos [683]. No entanto, no seu caso, o requisito do único imóvel não foi atendido devido ao outro imóvel do seu cônjuge [672].",
+    "cited": [
+     672,
+     683
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     684,
+     685,
+     683,
+     594,
+     672
+    ],
+    "calls": 1,
+    "tokens": 2329,
+    "tools": [],
+    "ms": 1867,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m08",
+    "text": "Sim. O contribuinte pode retificar a declaração a fim de se beneficiar da isenção legal sobre os proventos de aposentadoria ou pensão, até o valor permitido na legislação [052]. \n\nAté 29 de maio de 2026, a declaração retificadora deve ser enviada pela Internet, mediante a utilização do PGD ou mediante acesso ao serviço “Meu Imposto de Renda” (disponível no site da RFB na Internet ou em aplicativos da RFB para dispositivos móveis, tais como tablets e smartphones) [045]. Após 29 de maio de 2026, além dos meios citados, também pode ser apresentada em mídia removível nas unidades da Secretaria Especial da Receita Federal do Brasil - RFB [045].",
+    "cited": [
+     52,
+     45
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     52,
+     278,
+     281,
+     45,
+     173
+    ],
+    "calls": 1,
+    "tokens": 2204,
+    "tools": [],
+    "ms": 1345,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m09",
+    "text": "O valor da segunda quota (com vencimento em 30/06/2026) corresponde ao valor apurado acrescido de 1% [064].",
+    "cited": [
+     64
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     63,
+     50,
+     66,
+     64
+    ],
+    "calls": 1,
+    "tokens": 2513,
+    "tools": [],
+    "ms": 2366,
+    "kind": "multi-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m10",
+    "text": "O prazo para o contribuinte pleitear a restituição do imposto pago indevidamente ou em valor maior que o devido extingue-se após o transcurso do prazo de 5 anos [069].\n\nO direito de o contribuinte retificar a declaração de rendimentos extingue-se em cinco anos, inclusive quanto ao valor dos bens e direitos declarados [044].",
+    "cited": [
+     69,
+     44
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     44,
+     51,
+     43,
+     48,
+     69
+    ],
+    "calls": 1,
+    "tokens": 2216,
+    "tools": [],
+    "ms": 1039,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m11",
+    "text": "Não. Os pagamentos de aulas de natação não são dedutíveis como despesas com instrução por falta de previsão legal [415].\n\nAs deduções de despesas com instrução estão sujeitas ao limite anual individual de R$ 3.561,50, para o ano-calendário de 2025 [401]. O valor que ultrapassar esse limite com um dependente não pode ser compensado com gastos de outro dependente, alimentando ou do próprio contribuinte [401].",
+    "cited": [
+     415,
+     401
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     415,
+     407,
+     402,
+     400,
+     403,
+     423,
+     401,
+     411
+    ],
+    "calls": 2,
+    "tokens": 3945,
+    "tools": [
+     {
+      "name": "search_manual",
+      "args": {
+       "query": "limite deducao instrucao educação valor"
+      }
+     }
+    ],
+    "ms": 1854,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m12",
+    "text": "O filho de 23 anos que cursa faculdade pode ser considerado dependente [340]. \n\nA companheira com quem você vive há mais de 5 anos também pode ser dependente [340].",
+    "cited": [
+     340
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     353,
+     340,
+     350,
+     420,
+     341
+    ],
+    "calls": 1,
+    "tokens": 2077,
+    "tools": [],
+    "ms": 1120,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "o01",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     207,
+     61,
+     574,
+     308,
+     706
+    ],
+    "calls": 1,
+    "tokens": 2332,
+    "tools": [],
+    "ms": 1335,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o02",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     66,
+     35,
+     241,
+     737,
+     642
+    ],
+    "calls": 1,
+    "tokens": 2266,
+    "tools": [],
+    "ms": 998,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o03",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     184,
+     126,
+     5,
+     194,
+     183
+    ],
+    "calls": 1,
+    "tokens": 2337,
+    "tools": [],
+    "ms": 1214,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o04",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     669,
+     530,
+     740,
+     549,
+     531
+    ],
+    "calls": 1,
+    "tokens": 2207,
+    "tools": [],
+    "ms": 862,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o05",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     725,
+     603,
+     724,
+     707,
+     671
+    ],
+    "calls": 1,
+    "tokens": 2239,
+    "tools": [],
+    "ms": 1036,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o06",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     52,
+     280,
+     278,
+     279,
+     133
+    ],
+    "calls": 1,
+    "tokens": 2006,
+    "tools": [],
+    "ms": 942,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o07",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     225,
+     610,
+     595,
+     89,
+     265
+    ],
+    "calls": 1,
+    "tokens": 2022,
+    "tools": [],
+    "ms": 991,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o08",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     741,
+     742,
+     1,
+     10,
+     266
+    ],
+    "calls": 1,
+    "tokens": 2090,
+    "tools": [],
+    "ms": 778,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o09",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     441,
+     255,
+     429,
+     265,
+     66
+    ],
+    "calls": 1,
+    "tokens": 1833,
+    "tools": [],
+    "ms": 1187,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o10",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     22,
+     107,
+     21,
+     1,
+     35
+    ],
+    "calls": 1,
+    "tokens": 1841,
+    "tools": [],
+    "ms": 1055,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o11",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     643,
+     61,
+     574,
+     706
+    ],
+    "calls": 1,
+    "tokens": 2552,
+    "tools": [],
+    "ms": 1257,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   }
+  ]
+ }
+}

@@ -59,7 +59,15 @@ Retrieval: hit@5 and MRR on the labeled questions. Answers: fact correct, citati
    | pages | 60% | 95% | 0.73 | 75% | 7,054 chars |
 
    Question-level nodes rank the right question first more often, with a third less context. Two things this changes for the agent: the second question of a multi-hop pair is usually retrieved already (11 of 12), so following cross-references has less to win than expected; and out-of-scope questions score almost as high as answerable ones (median top similarity 0.853 against 0.888), so refusing has to be the model's call, not a threshold's.
-4. **Agent** (built, eval pending): the Workflow with `search_manual` and `read_question`, the citation check and refusals. Compared against the baseline on the multi-hop and out-of-scope questions, where it should help, and on cost, where it shouldn't.
+4. **Agent** (done): the Workflow with `search_manual` and `read_question`, the citation check and refusals, tested with a scripted model. First run of `python -m evals.run` on the golden set:
+
+   | System | Fact right | Multi-hop | Refuses out of scope | Refuses in scope | Model calls | Tokens |
+   |---|---|---|---|---|---|---|
+   | RAG over page chunks | 90% | 83% | 100% | 3% | 1.00 | 2,643 |
+   | RAG over questions | 98% | 92% | 100% | 0% | 1.00 | 1,823 |
+   | Agent over questions | 97% | 92% | 100% | 0% | 1.01 | 2,179 |
+
+   The index matters more than the agent here: question-level nodes fix 5 of the page baseline's 6 misses. The agent made one tool call in 69 questions, the search that found the education limit in m11, which RAG answered as "not in the manual", and it lost two answers to wording ("acrescido de 1%" for the manual's "mais 1%"). This golden set is close to the ceiling for plain RAG, because retrieval already brings the second question of most multi-hop pairs (see milestone 3). A fact counts when the answer contains it, or for three items an alternative copied from the same question, added after reading the first run's answers.
 5. **Pinecone**: the same nodes and embeddings in a Pinecone serverless index on the free plan, behind the same retriever interface. Same eval, so any difference is the store, plus query latency from here.
 6. **Eval and tracing**: `python -m evals.run` over the golden set with cached answers (so reruns cost no quota), a report per run, Phoenix traces and experiments.
 7. **Tests, CI and write-up**: pytest for the parser, the citation check and the workflow with a mocked model; GitHub Actions; README with the results; Medium article and LinkedIn project (drafts).

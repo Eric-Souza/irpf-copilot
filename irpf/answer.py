@@ -68,10 +68,11 @@ def check(text: str, seen: set[int]) -> tuple[str, list[int], list[int]]:
     return text, list(dict.fromkeys(n for n in found if n in seen)), dropped
 
 
-def refused(text: str) -> bool:
-    return REFUSAL.rstrip(".").lower() in text.lower()
+def refused(text: str, cited: list[int]) -> bool:
+    """The refusal sentence with nothing cited: an answer can use the sentence for the part it can't answer"""
+    return REFUSAL.rstrip(".").lower() in text.lower() and not cited
 
 
 def finish(text: str, seen: list[int], **cost) -> Answer:
     text, cited, dropped = check(text, set(seen))
-    return Answer(text=text, cited=cited, dropped=dropped, refused=refused(text), seen=list(dict.fromkeys(seen)), **cost)
+    return Answer(text=text, cited=cited, dropped=dropped, refused=refused(text, cited), seen=list(dict.fromkeys(seen)), **cost)
