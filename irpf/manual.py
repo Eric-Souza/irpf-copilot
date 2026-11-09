@@ -43,7 +43,13 @@ def is_heading(line: str) -> bool:
 def clean(text: str) -> str:
     # pypdf splits "ano-calendário" as "ano -calendário" and leaves runs of spaces
     text = re.sub(r" +-(?=\w)", "-", text)
-    return re.sub(r"[ \t]+", " ", text).strip()
+    text = re.sub(r"[ \t]+", " ", text).strip()
+    # and sometimes splits numbers: "20 26", "202 5", "R$ 3. 561,50", "R$ 5 00,00", "1 6 de março"
+    text = re.sub(r"\b20(?: 2(\d)|2 (\d))\b", lambda m: f"202{m[1] or m[2]}", text)
+    text = re.sub(r"(\d)\. (\d{3})", r"\1.\2", text)
+    text = re.sub(r"(R\$ \d) (\d)", r"\1\2", text)
+    text = re.sub(r"\b([1-3]) (\d)(?= de [a-zç]+ de \d{4}|/\d\d/\d{4})", r"\1\2", text)
+    return text
 
 
 def parse(pdf: Path = PDF) -> list[Question]:
@@ -98,6 +104,12 @@ def parse(pdf: Path = PDF) -> list[Question]:
         body.append(line)
     close()
     return questions
+
+
+def load(path: Path = OUT) -> dict[int, Question]:
+    """The parsed questions by number"""
+    with path.open(encoding="utf-8") as f:
+        return {q.number: q for q in (Question(**json.loads(line)) for line in f)}
 
 
 if __name__ == "__main__":

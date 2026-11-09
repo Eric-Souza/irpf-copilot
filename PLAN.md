@@ -35,7 +35,7 @@ A step limit (4 tool calls) keeps a confused agent from spending the free tier's
 
 ## Golden set
 
-About 60 questions written as a taxpayer would ask them, each labeled with the manual questions that answer it and a fact the answer must contain (a limit, a deadline, a yes or no). Every fact is checked by code against the labeled question's text, so a label can't drift from the manual. The mix:
+Questions written as a taxpayer would ask them, each labeled with the manual questions that answer it and a fact the answer must contain (a limit, a deadline, a yes or no). Every fact is checked by code against the labeled question's text, so a label can't drift from the manual. The mix:
 
 - direct: close to the manual's own wording
 - colloquial: the same question the way people ask it ("posso declarar minha mãe como dependente?")
@@ -50,7 +50,7 @@ Retrieval: hit@5 and MRR on the labeled questions. Answers: fact correct, citati
 ## Milestones
 
 1. **Parse** (done): download the manual, parse it into 745 questions with none missing, their chapters, topics and cross-references. Still rough: soft line wraps stay as line breaks, and some chapter headings that wrap across lines are cut short.
-2. **Golden set**: about 60 labeled questions, with each must-contain fact verified against the manual by a test.
+2. **Golden set** (done): 69 questions in `evals/golden.json`: 16 on numbers and dates, 10 in the manual's wording, 20 colloquial, 12 multi-hop and 11 out of scope. A test checks that each fact is in a labeled question's text, and for the multi-hop ones that it is only in a question the first one points to, so retrieving the first one alone isn't enough. Building it turned up numbers pypdf had split ("R$ 3. 561,50", "20 26"), which the parser now joins.
 3. **Index and baseline RAG**: an ingestion pipeline to question-level nodes with metadata, the fixed-size chunk baseline, both in Chroma; a plain query engine that answers with citations. First retrieval numbers.
 4. **Agent**: the Workflow with `search_manual` and `read_question`, the citation check and refusals. Compared against the baseline on the multi-hop and out-of-scope questions, where it should help, and on cost, where it shouldn't.
 5. **Pinecone**: the same nodes and embeddings in a Pinecone serverless index on the free plan, behind the same retriever interface. Same eval, so any difference is the store, plus query latency from here.
