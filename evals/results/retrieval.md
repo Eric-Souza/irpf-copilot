@@ -1,11 +1,11 @@
-# Retrieval: intfloat/multilingual-e5-base, top 10
+# Retrieval: intfloat/multilingual-e5-base in chroma, top 10
 
 69 golden questions, 58 with an answer in the manual.
 
-| Index | hit@1 | hit@5 | MRR@10 | hit@5 number | hit@5 direct | hit@5 colloquial | hit@5 multi-hop | Multi-hop, second question @5 | Both @5 | Context at 5 (chars) |
-|---|---|---|---|---|---|---|---|---|---|---|
-| questions | 76% | 97% | 0.84 | 94% | 100% | 95% | 100% | 92% | 92% | 4,690 |
-| pages | 60% | 95% | 0.73 | 94% | 100% | 90% | 100% | 75% | 75% | 7,054 |
+| Index | hit@1 | hit@5 | MRR@10 | hit@5 number | hit@5 direct | hit@5 colloquial | hit@5 multi-hop | Multi-hop, second question @5 | Both @5 | Context at 5 (chars) | Median query |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| questions | 76% | 97% | 0.84 | 94% | 100% | 95% | 100% | 92% | 92% | 4,690 | 2 ms |
+| pages | 60% | 95% | 0.73 | 94% | 100% | 90% | 100% | 75% | 75% | 7,056 | 2 ms |
 
 Median similarity of the top result: questions: 0.888 in scope, 0.853 out of scope; pages: 0.883 in scope, 0.856 out of scope.
 

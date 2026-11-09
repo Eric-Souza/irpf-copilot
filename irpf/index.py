@@ -1,13 +1,15 @@
 # The manual in Chroma, two ways:
 # - questions: one node per question, long answers split under it, each part headed by its question
 # - pages: the baseline, fixed-size chunks over the page text that know nothing about questions
+# The same nodes and embeddings also go to Pinecone serverless (free Starter plan), behind the same
+# retriever, so comparing the two compares only the store.
 # Embeddings come from a local multilingual model by default. Gemini's free tier allows only 1000
 # embedding requests a day, each text counting as one, which doesn't cover the 1,925 nodes, let
 # alone the queries; IRPF_EMBED_MODEL=gemini-embedding-001 still works for a comparison. Embeddings
 # go through a cache on disk either way, so rebuilding an index or loading the same nodes into
 # Pinecone doesn't embed them again.
 #
-# Usage: uv run python -m irpf.index [--rebuild]
+# Usage: uv run python -m irpf.index [--rebuild] [--pinecone]
 
 import functools
 import hashlib
@@ -27,6 +29,7 @@ from llama_index.core.base.embeddings.base import BaseEmbedding
 from llama_index.embeddings.google_genai import GoogleGenAIEmbedding
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.vector_stores.chroma import ChromaVectorStore
+from llama_index.vector_stores.pinecone import PineconeVectorStore
 from pypdf import PdfReader
 
 from irpf import manual
@@ -183,6 +186,29 @@ def chroma(corpus: str, rebuild: bool = False) -> VectorStoreIndex:
     return VectorStoreIndex(items, storage_context=StorageContext.from_defaults(vector_store=store), embed_model=embed_model())
 
 
+def pinecone(corpus: str, rebuild: bool = False) -> VectorStoreIndex:
+    """The corpus's index in Pinecone serverless, upserted the first time from the cached embeddings"""
+    from pinecone import Pinecone, ServerlessSpec
+
+    client = Pinecone(api_key=os.environ["PINECONE_API_KEY"])
+    name = f"irpf-{corpus}-{SLUG}".lower()
+    items = nodes(corpus)
+    if rebuild and client.has_index(name):
+        client.delete_index(name)
+    if not client.has_index(name):
+        # The Starter plan serves only AWS us-east-1
+        client.create_index(name, spec=ServerlessSpec(cloud="aws", region="us-east-1"), dimension=len(EmbeddingCache().embed(["dimensão"], kind="query")[0]), metric="cosine")
+    store = PineconeVectorStore(pinecone_index=client.Index(name))
+    count = client.Index(name).describe_index_stats().total_vector_count
+    if count == len(items):
+        return VectorStoreIndex.from_vector_store(store, embed_model=embed_model())
+    embed_nodes(items, EmbeddingCache())
+    return VectorStoreIndex(items, storage_context=StorageContext.from_defaults(vector_store=store), embed_model=embed_model())
+
+
+STORES = {"chroma": chroma, "pinecone": pinecone}
+
+
 def numbers(node: NodeWithScore) -> list[int]:
     """The manual questions a node holds: its own, or for a page chunk, every one it overlaps"""
     meta = node.node.metadata
@@ -192,9 +218,9 @@ def numbers(node: NodeWithScore) -> list[int]:
 class Search:
     """Top k nodes for a query, embedding the query through the cache"""
 
-    def __init__(self, corpus: str = "questions", k: int = 5):
+    def __init__(self, corpus: str = "questions", k: int = 5, store: str = "chroma"):
         self.corpus, self.cache = corpus, EmbeddingCache()
-        self.retriever = chroma(corpus).as_retriever(similarity_top_k=k)
+        self.retriever = STORES[store](corpus).as_retriever(similarity_top_k=k)
 
     def __call__(self, query: str) -> list[NodeWithScore]:
         [vector] = self.cache.embed([query], kind="query")
@@ -202,6 +228,7 @@ class Search:
 
 
 if __name__ == "__main__":
+    store = "pinecone" if "--pinecone" in sys.argv else "chroma"
     for corpus in CORPORA:
-        index = chroma(corpus, rebuild="--rebuild" in sys.argv)
-        print(f"{corpus}: {index.vector_store._collection.count()} nodes")
+        STORES[store](corpus, rebuild="--rebuild" in sys.argv)
+        print(f"{store} {corpus}: built")
