@@ -9,7 +9,7 @@ An agent that answers questions about the Brazilian income tax return (IRPF 2026
 | Corpus | `P&R IRPF 2026` v1.00 (23/04/2026), 340 pages, parsed with pypdf into 745 questions |
 | Framework | LlamaIndex 0.14: ingestion pipeline, `VectorStoreIndex`, Workflows |
 | LLM | Gemini 3.5 Flash Lite (free tier) through `llama-index-llms-google-genai` |
-| Embeddings | Gemini embeddings (free tier); a local multilingual model (`multilingual-e5`) if the quota is too tight |
+| Embeddings | `intfloat/multilingual-e5-base`, locally on CPU. Gemini's free tier allows 1000 embedding requests a day, each text counting as one: less than the 1,925 nodes, before any query. `gemini-embedding-001` stays selectable for a comparison |
 | Vector store | Chroma on disk locally, Pinecone serverless (free Starter plan) hosted, same embeddings in both |
 | Tracing | Phoenix, locally, through `openinference-instrumentation-llama-index` |
 | Tooling | uv, Python 3.12, pytest, GitHub Actions |
@@ -51,8 +51,15 @@ Retrieval: hit@5 and MRR on the labeled questions. Answers: fact correct, citati
 
 1. **Parse** (done): download the manual, parse it into 745 questions with none missing, their chapters, topics and cross-references. Still rough: soft line wraps stay as line breaks, and some chapter headings that wrap across lines are cut short.
 2. **Golden set** (done): 69 questions in `evals/golden.json`: 16 on numbers and dates, 10 in the manual's wording, 20 colloquial, 12 multi-hop and 11 out of scope. A test checks that each fact is in a labeled question's text, and for the multi-hop ones that it is only in a question the first one points to, so retrieving the first one alone isn't enough. Building it turned up numbers pypdf had split ("R$ 3. 561,50", "20 26"), which the parser now joins.
-3. **Index and baseline RAG**: an ingestion pipeline to question-level nodes with metadata, the fixed-size chunk baseline, both in Chroma; a plain query engine that answers with citations. First retrieval numbers.
-4. **Agent**: the Workflow with `search_manual` and `read_question`, the citation check and refusals. Compared against the baseline on the multi-hop and out-of-scope questions, where it should help, and on cost, where it shouldn't.
+3. **Index and baseline RAG** (done): 1,106 question-level nodes (long answers split under their question) and 819 fixed-size page chunks, both in Chroma, with embeddings cached on disk. `irpf/rag.py` answers from the top 5 in one model call, and `irpf/answer.py` checks the citations. Retrieval alone (`python -m evals.retrieval`, top 5 on the 58 answerable questions):
+
+   | Index | hit@1 | hit@5 | MRR@10 | Multi-hop, both questions @5 | Context at 5 |
+   |---|---|---|---|---|---|
+   | questions | 76% | 97% | 0.84 | 92% | 4,690 chars |
+   | pages | 60% | 95% | 0.73 | 75% | 7,054 chars |
+
+   Question-level nodes rank the right question first more often, with a third less context. Two things this changes for the agent: the second question of a multi-hop pair is usually retrieved already (11 of 12), so following cross-references has less to win than expected; and out-of-scope questions score almost as high as answerable ones (median top similarity 0.853 against 0.888), so refusing has to be the model's call, not a threshold's.
+4. **Agent** (built, eval pending): the Workflow with `search_manual` and `read_question`, the citation check and refusals. Compared against the baseline on the multi-hop and out-of-scope questions, where it should help, and on cost, where it shouldn't.
 5. **Pinecone**: the same nodes and embeddings in a Pinecone serverless index on the free plan, behind the same retriever interface. Same eval, so any difference is the store, plus query latency from here.
 6. **Eval and tracing**: `python -m evals.run` over the golden set with cached answers (so reruns cost no quota), a report per run, Phoenix traces and experiments.
 7. **Tests, CI and write-up**: pytest for the parser, the citation check and the workflow with a mocked model; GitHub Actions; README with the results; Medium article and LinkedIn project (drafts).
