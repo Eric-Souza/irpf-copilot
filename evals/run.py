@@ -1,7 +1,8 @@
 # Every golden question through each system, scored by code: the fact in the answer, the citations,
 # the refusals, and the cost. Answers are cached per system and question in storage/answers, keyed
 # by what the model is given (model, prompt, top k, step limit), so changing the scoring doesn't ask
-# again; --fresh does, after a change to the tools' code.
+# again; --fresh does, after a change to the tools' code. With PHOENIX_COLLECTOR_ENDPOINT set, every
+# question asked is traced to Phoenix; evals/phoenix.py logs the cached runs there as experiments.
 #
 # Usage: uv run python -m evals.run [--fresh] [--only agent]   (writes evals/results/run.md and .json)
 
@@ -13,7 +14,9 @@ import time
 from dataclasses import asdict
 from pathlib import Path
 
-from irpf import agent, answer, golden, index, rag
+from openinference.instrumentation import using_attributes
+
+from irpf import agent, answer, golden, index, rag, tracing
 
 OUT = Path("evals/results")
 CACHE = Path("storage/answers")
@@ -57,7 +60,9 @@ def run(name: str, make, items: list[golden.Item], fresh: bool) -> list[dict]:
     for item in items:
         if item.id not in cached:
             fn = fn or make()
-            row = {"id": item.id, **asdict(ask(fn, item.question))}
+            # Traced, with PHOENIX_COLLECTOR_ENDPOINT set, under the system and the golden id
+            with using_attributes(session_id=f"{name}-{version(name)}", metadata={"system": name, "id": item.id, "kind": item.kind}, tags=[name, item.kind]):
+                row = {"id": item.id, **asdict(ask(fn, item.question))}
             CACHE.mkdir(parents=True, exist_ok=True)
             with path.open("a", encoding="utf-8") as f:
                 f.write(json.dumps(row, ensure_ascii=False) + "\n")
@@ -131,6 +136,7 @@ def report(items: list[golden.Item], results: dict[str, list[dict]]) -> str:
 
 
 def main():
+    tracing.trace_to_phoenix()
     items = golden.load()
     only = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
     results = {name: run(name, make, items, "--fresh" in sys.argv) for name, make in systems().items() if not only or name == only}

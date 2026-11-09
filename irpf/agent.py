@@ -11,11 +11,12 @@ import sys
 import time
 from dataclasses import dataclass, field
 
+from llama_index.core.instrumentation import get_dispatcher
 from llama_index.core.llms import ChatMessage, MessageRole
 from llama_index.core.tools import FunctionTool, ToolSelection
 from llama_index.core.workflow import Context, Event, StartEvent, StopEvent, Workflow, step
 
-from irpf import answer, index, manual
+from irpf import answer, index, manual, tracing
 
 K = 5
 MAX_TOOL_CALLS = 4
@@ -38,6 +39,8 @@ def read_question(number: int) -> str:
     """O texto completo de uma pergunta do Perguntas e Respostas do IRPF 2026, pelo número (1 a 745)."""
     ...
 
+
+dispatcher = get_dispatcher(__name__)
 
 TOOLS = [FunctionTool.from_defaults(fn=search_manual), FunctionTool.from_defaults(fn=read_question)]
 
@@ -97,12 +100,14 @@ class Agent(Workflow):
     async def act(self, ctx: Context, ev: Act) -> Think:
         run: Run = await ctx.store.get("run")
         for call in ev.calls:
-            result = self.call(call, run)
+            result = self.tool(call, run)
             run.tools.append({"name": call.tool_name, "args": call.tool_kwargs})
             run.messages.append(ChatMessage(role=MessageRole.TOOL, content=result, additional_kwargs={"tool_call_id": call.tool_id, "name": call.tool_name}))
         return Think()
 
-    def call(self, call: ToolSelection, run: Run) -> str:
+    # A span of its own when traced, so a search's retrieval shows up under the call that made it
+    @dispatcher.span
+    def tool(self, call: ToolSelection, run: Run) -> str:
         args = call.tool_kwargs
         if call.tool_name == "search_manual":
             nodes = self.search(str(args.get("query", "")))
@@ -126,4 +131,5 @@ class Agent(Workflow):
 
 
 if __name__ == "__main__":
+    tracing.trace_to_phoenix()
     print(Agent().ask(" ".join(sys.argv[1:])))

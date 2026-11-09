@@ -8,7 +8,7 @@ import time
 
 from llama_index.core.llms import ChatMessage
 
-from irpf import answer, index
+from irpf import answer, index, tracing
 
 K = 5
 
@@ -30,5 +30,6 @@ class RAG:
 
 
 if __name__ == "__main__":
+    tracing.trace_to_phoenix()
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     print(RAG("pages" if "--pages" in sys.argv else "questions")(" ".join(args)))
