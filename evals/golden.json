@@ -71,5 +71,13 @@
   {"id": "o08", "kind": "out-of-scope", "question": "Quanto a poupança vai render este mês?", "expected": [], "fact": null},
   {"id": "o09", "kind": "out-of-scope", "question": "Como emito nota fiscal de serviço na prefeitura sendo autônomo?", "expected": [], "fact": null},
   {"id": "o10", "kind": "out-of-scope", "question": "Qual vai ser o prazo de entrega da declaração de 2028?", "expected": [], "fact": null},
-  {"id": "o11", "kind": "out-of-scope", "question": "Qual é a alíquota do imposto sobre grandes fortunas?", "expected": [], "fact": null}
+  {"id": "o11", "kind": "out-of-scope", "question": "Qual é a alíquota do imposto sobre grandes fortunas?", "expected": [], "fact": null},
+
+  {"id": "h01", "kind": "hard-hop", "question": "Tenho 66 anos e uso o desconto simplificado. Perco a parcela isenta da aposentadoria? E até quanto por mês ela vai?", "expected": [18, 252], "hop": 252, "fact": "1.903,98"},
+  {"id": "h02", "kind": "hard-hop", "question": "Vou receber um apartamento dos meus pais como adiantamento da legítima. Até quando o imposto tem que ser pago? E em nome de quem?", "expected": [615, 692], "hop": 692, "fact": "em nome do doador"},
+  {"id": "h03", "kind": "hard-hop", "question": "Meu filho e a esposa dele não têm renda e eu sustento os dois. Posso colocá-los como dependentes? E o filho deles, em que casos pode?", "expected": [353, 354], "hop": 354, "fact": "guarda judicial"},
+  {"id": "h04", "kind": "hard-hop", "question": "Dá pra atualizar o valor do meu carro e da minha casa para o valor de mercado na declaração? Até quando tinha que aderir?", "expected": [587, 650], "hop": 650, "fact": "19 de fevereiro de 2026"},
+  {"id": "h05", "kind": "hard-hop", "question": "Recebi um precatório este ano. Como ele é tributado? E em que momento descontam o imposto?", "expected": [232, 231], "hop": 231, "fact": "se tornem disponíveis ao beneficiário"},
+  {"id": "h06", "kind": "hard-hop", "question": "No divórcio recebi um reembolso porque fiquei com menos bens. Isso é tributado? E se eu ficar com a casa por um valor acima do que estava na declaração?", "expected": [586, 607], "hop": 607, "fact": "tributada à alíquota de 15%"},
+  {"id": "h07", "kind": "hard-hop", "question": "Os filhos que minha esposa teve no outro casamento podem ser meus dependentes? E a mãe dela, que mora com a gente?", "expected": [345, 355], "hop": 355, "fact": "declarando em conjunto com o genro ou a nora"}
 ]

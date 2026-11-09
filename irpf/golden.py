@@ -13,11 +13,12 @@ GOLDEN = Path("evals/golden.json")
 @dataclass
 class Item:
     id: str
-    kind: str  # number, direct, colloquial, multi-hop, out-of-scope
+    kind: str  # number, direct, colloquial, multi-hop, hard-hop, out-of-scope
     question: str
     expected: list[int] = field(default_factory=list)
     fact: str | None = None
-    # For multi-hop: the question the fact is in, which the first expected one only points to
+    # For multi-hop and hard-hop: the question the fact is in, which the first expected one only points to.
+    # A hard-hop item's second question is outside the top 5 the first retrieval returns.
     hop: int | None = None
     # Other wording of the fact, also copied from an expected question, for answers that quote that instead
     also: list[str] = field(default_factory=list)

@@ -40,6 +40,7 @@ Questions written as a taxpayer would ask them, each labeled with the manual que
 - direct: close to the manual's own wording
 - colloquial: the same question the way people ask it ("posso declarar minha mãe como dependente?")
 - multi-hop: the answer needs a question the first one points to
+- hard-hop: multi-hop pairs where retrieval brings the first question but not the second, picked by running retrieval, so only following the reference finds the fact
 - numbers: limits and values (R$ 35.584,00, the deduction per dependent)
 - out of scope: questions the manual doesn't answer, which should be refused
 
@@ -50,7 +51,7 @@ Retrieval: hit@5 and MRR on the labeled questions. Answers: fact correct, citati
 ## Milestones
 
 1. **Parse** (done): download the manual, parse it into 745 questions with none missing, their chapters, topics and cross-references. Still rough: soft line wraps stay as line breaks, and some chapter headings that wrap across lines are cut short.
-2. **Golden set** (done): 69 questions in `evals/golden.json`: 16 on numbers and dates, 10 in the manual's wording, 20 colloquial, 12 multi-hop and 11 out of scope. A test checks that each fact is in a labeled question's text, and for the multi-hop ones that it is only in a question the first one points to, so retrieving the first one alone isn't enough. Building it turned up numbers pypdf had split ("R$ 3. 561,50", "20 26"), which the parser now joins.
+2. **Golden set** (done): 69 questions in `evals/golden.json`: 16 on numbers and dates, 10 in the manual's wording, 20 colloquial, 12 multi-hop, 7 hard-hop and 11 out of scope (76). A test checks that each fact is in a labeled question's text, and for the multi-hop and hard-hop ones that it is only in a question the first one points to, so retrieving the first one alone isn't enough. Building it turned up numbers pypdf had split ("R$ 3. 561,50", "20 26"), which the parser now joins.
 3. **Index and baseline RAG** (done): 1,106 question-level nodes (long answers split under their question) and 819 fixed-size page chunks, both in Chroma, with embeddings cached on disk. `irpf/rag.py` answers from the top 5 in one model call, and `irpf/answer.py` checks the citations. Retrieval alone (`python -m evals.retrieval`, top 5 on the 58 answerable questions):
 
    | Index | hit@1 | hit@5 | MRR@10 | Multi-hop, both questions @5 | Context at 5 |
@@ -67,7 +68,19 @@ Retrieval: hit@5 and MRR on the labeled questions. Answers: fact correct, citati
    | RAG over questions | 98% | 92% | 100% | 0% | 1.00 | 1,823 |
    | Agent over questions | 97% | 92% | 100% | 0% | 1.01 | 2,179 |
 
+   (69 questions, before the hard-hop subset.)
+
    The index matters more than the agent here: question-level nodes fix 5 of the page baseline's 6 misses. The agent made one tool call in 69 questions, the search that found the education limit in m11, which RAG answered as "not in the manual", and it lost two answers to wording ("acrescido de 1%" for the manual's "mais 1%"). This golden set is close to the ceiling for plain RAG, because retrieval already brings the second question of most multi-hop pairs (see milestone 3). A fact counts when the answer contains it, or for three items an alternative copied from the same question, added after reading the first run's answers.
+
+   So the golden set gained 7 hard-hop items, chosen so the second question is outside the top 5 of the question index (0 of 7 retrieved; the page index gets 3, because a chunk can span adjacent questions). With them, on all 76:
+
+   | System | Fact right | Multi-hop | Hard-hop | Refuses out of scope | Refuses in scope | Model calls | Tool calls | Tokens |
+   |---|---|---|---|---|---|---|---|---|
+   | RAG over page chunks | 86% | 83% | 57% (4/7) | 100% | 5% | 1.00 | 0.00 | 2,642 |
+   | RAG over questions | 94% | 92% | 57% (4/7) | 100% | 0% | 1.00 | 0.00 | 1,823 |
+   | Agent over questions | 94% | 92% | 71% (5/7) | 100% | 0% | 1.07 | 0.07 | 2,359 |
+
+   This is where the agent earns its tool calls: it called one on 4 of the 7, and got h03 (the guardianship condition), which both baselines miss, at about 30% more tokens on average. RAG still gets 4 of 7 because the first question often states enough of the fact to be scored right. Of the agent's two misses, h07 is wording: it searched again, read 355 and gave the right condition ("estiver declarando em conjunto com você") instead of the manual's "com o genro ou a nora". h05 is a real miss: it answered from 232 and never followed the reference to 231. Seven items is too few to call the difference; it says where to look, not how big it is.
 5. **Pinecone** (done): the same nodes and embeddings in two Pinecone serverless indexes on the free Starter plan (AWS us-east-1), behind the same retriever (`index.Search(store="pinecone")`, `python -m evals.retrieval --pinecone`). Retrieval scores are identical to Chroma's; 66 of 69 top-5 lists are the same, and the rest differ in order or in a near tie, as approximate nearest-neighbour search does. The difference is latency: 151 ms median per query from here, against 2 ms for Chroma on disk, which is under a tenth of a model call.
 6. **Eval and tracing**: `python -m evals.run` over the golden set with cached answers (so reruns cost no quota), a report per run, Phoenix traces and experiments.
 7. **Tests, CI and write-up**: pytest for the parser, the citation check and the workflow with a mocked model; GitHub Actions; README with the results; Medium article and LinkedIn project (drafts).

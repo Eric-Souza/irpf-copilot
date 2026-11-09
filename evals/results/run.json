@@ -1,55 +1,58 @@
 {
  "summary": {
   "rag-pages": {
-   "fact": 0.896551724137931,
+   "fact": 0.8615384615384616,
    "fact_by_kind": {
     "number": 0.875,
     "direct": 1.0,
     "colloquial": 0.9,
-    "multi-hop": 0.8333333333333334
+    "multi-hop": 0.8333333333333334,
+    "hard-hop": 0.5714285714285714
    },
-   "cites_expected": 0.9137931034482759,
+   "cites_expected": 0.8923076923076924,
    "dropped": 0,
    "refused_out_of_scope": 1.0,
-   "refused_in_scope": 0.034482758620689655,
+   "refused_in_scope": 0.046153846153846156,
    "calls": 1,
    "tool_calls": 0,
-   "tokens": 2642.9710144927535,
-   "ms_median": 1009
+   "tokens": 2641.9868421052633,
+   "ms_median": 1017.0
   },
   "rag-questions": {
-   "fact": 0.9827586206896551,
+   "fact": 0.9384615384615385,
    "fact_by_kind": {
     "number": 1.0,
     "direct": 1.0,
     "colloquial": 1.0,
-    "multi-hop": 0.9166666666666666
+    "multi-hop": 0.9166666666666666,
+    "hard-hop": 0.5714285714285714
    },
-   "cites_expected": 0.9655172413793104,
+   "cites_expected": 0.9538461538461539,
    "dropped": 0,
    "refused_out_of_scope": 1.0,
    "refused_in_scope": 0.0,
    "calls": 1,
    "tool_calls": 0,
-   "tokens": 1822.7826086956522,
-   "ms_median": 988
+   "tokens": 1822.671052631579,
+   "ms_median": 1042.0
   },
   "agent": {
-   "fact": 0.9655172413793104,
+   "fact": 0.9384615384615385,
    "fact_by_kind": {
     "number": 1.0,
     "direct": 1.0,
     "colloquial": 0.95,
-    "multi-hop": 0.9166666666666666
+    "multi-hop": 0.9166666666666666,
+    "hard-hop": 0.7142857142857143
    },
-   "cites_expected": 0.9482758620689655,
+   "cites_expected": 0.9538461538461539,
    "dropped": 0,
    "refused_out_of_scope": 1.0,
    "refused_in_scope": 0.0,
-   "calls": 1.0144927536231885,
-   "tool_calls": 0.014492753623188406,
-   "tokens": 2179.014492753623,
-   "ms_median": 1114
+   "calls": 1.0657894736842106,
+   "tool_calls": 0.06578947368421052,
+   "tokens": 2359.342105263158,
+   "ms_median": 1116.0
   }
  },
  "results": {
@@ -2043,6 +2046,213 @@
     "refusal_right": true,
     "cites_expected": null,
     "found_expected": null
+   },
+   {
+    "id": "h01",
+    "text": "Não. O desconto simplificado não substitui a parcela de isenção referente a rendimentos de aposentadoria recebidos por contribuinte maior de 65 anos [018]. \n\nA parcela isenta está limitada a até R$ 1.903,98 por mês, no ano-calendário de 2025, a partir do mês em que o contribuinte completar 65 anos [052].",
+    "cited": [
+     18,
+     52
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     51,
+     52,
+     17,
+     18,
+     19,
+     276,
+     277,
+     252,
+     253,
+     279,
+     280
+    ],
+    "calls": 1,
+    "tokens": 2728,
+    "tools": [],
+    "ms": 1258,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h02",
+    "text": "O imposto deve ser pago até o último dia útil do mês subsequente ao da doação [615]. \n\nO Darf do pagamento do imposto deve ser feito em nome do doador, com a utilização do código 4600 [615].",
+    "cited": [
+     615
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     608,
+     609,
+     613,
+     614,
+     615,
+     207,
+     446,
+     209,
+     210,
+     211
+    ],
+    "calls": 1,
+    "tokens": 2196,
+    "tools": [],
+    "ms": 806,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h03",
+    "text": "Não encontrei isso no Perguntas e Respostas do IRPF 2026.",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     340,
+     339,
+     349,
+     350,
+     345,
+     346,
+     347,
+     351,
+     352,
+     353
+    ],
+    "calls": 1,
+    "tokens": 2615,
+    "tools": [],
+    "ms": 790,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "h04",
+    "text": "Sim, a Lei nº 15.265, de 21 de novembro de 2025, permitiu a atualização de valor de bens móveis automotores terrestres, aquáticos e aéreos sujeitos a registro público e imóveis localizados no território nacional ou no exterior adquiridos com recursos de origem lícita até 31 de dezembro de 2024 por pessoas físicas residentes no País e declarados na Declaração de Ajuste Anual do Imposto sobre a Renda da Pessoa Física [650]. \n\nA adesão ao Rearp Atualização ficou condicionada ao cumprimento integral dos requisitos cumulativos até **19 de fevereiro de 2026**, que consistem na apresentação da Declaração de Opção pelo Regime Especial de Atualização Patrimonial (Deap) e no pagamento integral do imposto sobre a renda da pessoa física calculado sobre a diferença entre o valor atualizado e o custo de aquisição à alíquota definitiva de 4% [650].",
+    "cited": [
+     650
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     652,
+     647,
+     587,
+     651,
+     649,
+     650
+    ],
+    "calls": 1,
+    "tokens": 2718,
+    "tools": [],
+    "ms": 1451,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h05",
+    "text": "O imposto sobre a renda relativo a rendimentos pagos em cumprimento de decisão da Justiça Federal, mediante precatório ou requisição de pequeno valor, incidirá à alíquota de 3% sobre o montante pago, sem quaisquer deduções, e será retido na fonte pela instituição financeira responsável pelo pagamento no momento do pagamento ao beneficiário ou seu representante legal [232]. A retenção do imposto é dispensada quando o beneficiário declarar à instituição financeira responsável pelo pagamento que os rendimentos recebidos são isentos ou não tributáveis [233]. O valor retido na fonte não é definitivo, sendo considerado antecipação do imposto apurado, devendo o contribuinte informar os rendimentos e a respectiva antecipação na Declaração de Ajuste Anual [232] [233].",
+    "cited": [
+     232,
+     233
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     595,
+     231,
+     232,
+     233,
+     297,
+     298,
+     299
+    ],
+    "calls": 1,
+    "tokens": 2862,
+    "tools": [],
+    "ms": 1094,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h06",
+    "text": "Na transferência do direito de propriedade em decorrência de dissolução de sociedade conjugal ou união estável, se os bens e direitos forem transferidos pelo valor informado na última Declaração de Bens e Direitos, não incide a cobrança de imposto no ato da transferência [690]. \n\nSe a transferência foi feita em valor superior àquele pelo qual constavam na última declaração de quem declarava os bens antes da dissolução, a diferença positiva é tributada à alíquota de 15% em nome do cônjuge ou companheiro a quem o ativo foi atribuído [690].\n\nO manual não trata da parte da pergunta sobre a tributação de reembolso recebido por ficar com menos bens.",
+    "cited": [
+     690
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     698,
+     699,
+     700,
+     689,
+     690,
+     88,
+     89,
+     93,
+     94,
+     479,
+     480,
+     481,
+     482
+    ],
+    "calls": 1,
+    "tokens": 2811,
+    "tools": [],
+    "ms": 1241,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "h07",
+    "text": "Não, os dependentes próprios de um dos cônjuges ou companheiros não podem ser considerados na declaração do outro cônjuge ou companheiro, a menos que seja apresentada uma declaração em conjunto onde estejam sendo tributados rendimentos de ambos [345]. \n\nSe Vani e Aristóteles apresentarem declaração em conjunto, a mãe e os filhos dela (como enteados) poderão constar como dependentes [345]. Se apresentarem declaração em separado, os dependentes próprios de cada cônjuge só podem constar em sua própria declaração [345].",
+    "cited": [
+     345
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     344,
+     345,
+     346,
+     347,
+     396,
+     98,
+     99,
+     100,
+     426,
+     427
+    ],
+    "calls": 1,
+    "tokens": 2496,
+    "tools": [],
+    "ms": 1513,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
    }
   ],
   "rag-questions": [
@@ -3732,6 +3942,180 @@
     "refusal_right": true,
     "cites_expected": null,
     "found_expected": null
+   },
+   {
+    "id": "h01",
+    "text": "Não, o desconto simplificado não substitui a parcela de isenção referente a rendimentos de aposentadoria de contribuinte maior de 65 anos [018]. A parcela isenta está limitada a até R$ 1.903,98 por mês, no ano-calendário de 2025, a partir do mês em que o contribuinte completar 65 anos [052].",
+    "cited": [
+     18,
+     52
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     18,
+     52,
+     281,
+     280,
+     267
+    ],
+    "calls": 1,
+    "tokens": 1844,
+    "tools": [],
+    "ms": 1248,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h02",
+    "text": "O imposto deve ser pago até o último dia útil do mês subsequente ao da doação [615]. O Darf do pagamento do imposto deve ser feito em nome do doador [615].",
+    "cited": [
+     615
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     615,
+     694,
+     579,
+     608,
+     630
+    ],
+    "calls": 1,
+    "tokens": 1415,
+    "tools": [],
+    "ms": 1048,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h03",
+    "text": "Apenas o filho ou filha, ainda que casados ou conviventes, podem ser dependentes dos pais desde que se enquadrem em uma das condições de dependência elencadas na resposta à pergunta 340 [353]. \n\nCaso o filho ou filha, considerados dependentes na declaração dos pais, estejam declarando em conjunto com estes, seu cônjuge ou convivente, desde que não esteja declarando em separado, também pode ser dependente na mesma declaração [353].\n\nO manual não trata dos casos em que o filho deles (neto) pode ser dependente.",
+    "cited": [
+     353
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     353,
+     340,
+     355,
+     357
+    ],
+    "calls": 1,
+    "tokens": 1750,
+    "tools": [],
+    "ms": 1496,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h04",
+    "text": "Sim, é possível atualizar o valor de bens móveis (como automóveis) e imóveis para o valor de mercado por meio do Regime Especial de Atualização Patrimonial (Rearp – Atualização) [652]. \n\nA adesão ficava condicionada ao cumprimento integral dos requisitos, incluindo a apresentação da Declaração de Opção pelo Regime Especial de Atualização Patrimonial (Deap) e o pagamento integral do imposto à alíquota definitiva de 4%, até **19 de fevereiro de 2026** [652].",
+    "cited": [
+     652
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     587,
+     651,
+     652,
+     648
+    ],
+    "calls": 1,
+    "tokens": 2179,
+    "tools": [],
+    "ms": 1036,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "h05",
+    "text": "O imposto sobre a renda relativo a rendimentos pagos por precatório ou requisição de pequeno valor será retido na fonte pela instituição financeira responsável pelo pagamento e incidirá à alíquota de 3% sobre o montante pago, sem quaisquer deduções, no momento do pagamento ao beneficiário ou seu representante legal [232]. O valor retido na fonte (3%) não é definitivo e será considerado antecipação do imposto apurado, devendo o contribuinte informar na declaração de ajuste anual os rendimentos e a respectiva antecipação [232]. A retenção é dispensada se o beneficiário declarar à instituição financeira que os rendimentos são isentos ou não tributáveis [232].",
+    "cited": [
+     232
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     232,
+     595,
+     254
+    ],
+    "calls": 1,
+    "tokens": 2081,
+    "tools": [],
+    "ms": 1439,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h06",
+    "text": "O valor em moeda corrente recebido referente a reembolso de diferença do montante de bens e direitos que lhe cabiam em decorrência da meação ou herança corresponde a uma alienação desses bens e direitos e está sujeito à apuração do ganho de capital [586].\n\nSe a transferência dos bens ou direitos a quem lhe foram atribuídos foi efetuada em valor superior àquele pelo qual constavam na última declaração de quem os declarava antes da dissolução da sociedade conjugal ou união estável, a diferença positiva é tributada à alíquota de 15% em nome do cônjuge ou companheiro a quem o ativo foi atribuído, e o bem passa a constar pelo valor atribuído na transferência, que constituirá custo para eventual alienação futura [690].",
+    "cited": [
+     586,
+     690
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     699,
+     459,
+     586,
+     89,
+     690
+    ],
+    "calls": 1,
+    "tokens": 1723,
+    "tools": [],
+    "ms": 1988,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h07",
+    "text": "O contribuinte pode efetuar apenas as deduções correspondentes a seus dependentes próprios, não podendo considerar os dependentes próprios de um dos cônjuges ou companheiros, exceto se for apresentada declaração em conjunto onde estejam sendo tributados rendimentos de ambos [345]. \n\nSe for apresentada declaração em separado, os dependentes próprios do cônjuge só podem constar na declaração dele [345].\n\nO manual não trata especificamente da situação da mãe da esposa morando com vocês, pois a lista de quem pode ser dependente trazida nos trechos disponíveis não contempla sogros [340].",
+    "cited": [
+     345,
+     340
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     353,
+     99,
+     345,
+     343,
+     340
+    ],
+    "calls": 1,
+    "tokens": 1759,
+    "tools": [],
+    "ms": 1075,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
    }
   ],
   "agent": [
@@ -5429,6 +5813,219 @@
     "refusal_right": true,
     "cites_expected": null,
     "found_expected": null
+   },
+   {
+    "id": "h01",
+    "text": "Não, o desconto simplificado não substitui a parcela de isenção referente a rendimentos de aposentadoria de contribuinte maior de 65 anos; ela deve ser informada na ficha de Rendimentos Isentos e Não Tributáveis, enquanto o desconto simplificado aplica-se apenas aos rendimentos tributáveis [018]. \n\nA parcela isenta está limitada a até R$ 1.903,98 por mês no ano-calendário de 2025, a partir do mês em que o contribuinte completar 65 anos [052].",
+    "cited": [
+     18,
+     52
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     18,
+     52,
+     281,
+     280,
+     267
+    ],
+    "calls": 1,
+    "tokens": 2196,
+    "tools": [],
+    "ms": 1066,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h02",
+    "text": "O imposto deve ser pago até o último dia útil do mês subsequente ao da doação [615].\nO Darf do pagamento do imposto deve ser feito em nome do doador [615].",
+    "cited": [
+     615
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     615,
+     694,
+     579,
+     608,
+     630
+    ],
+    "calls": 1,
+    "tokens": 1735,
+    "tools": [],
+    "ms": 996,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h03",
+    "text": "O filho ou filha pode ser considerado dependente se se enquadrar nas condições de dependência da legislação, desde que atenda aos requisitos (como idade e outras condições) [353]. Caso o filho seja considerado dependente na declaração dos pais e estes estejam declarando em conjunto com ele, o cônjuge ou convivente do filho também pode ser dependente na mesma declaração, desde que não esteja declarando em separado [353]. \n\nQuanto ao neto (filho deles), ele pode ser considerado dependente se estiver em uma das seguintes situações:\n- com idade de até 21 anos, desde que o contribuinte detenha a guarda judicial [354];\n- com idade de 21 até 24 anos, se ainda estiver cursando estabelecimento de ensino superior ou escola técnica de segundo grau, desde que o responsável tenha detido a guarda judicial até a idade de 21 anos [354];\n- de qualquer idade, em se tratando de pessoa com deficiência [354].\nEm todas essas situações do neto, é necessário que ele não tenha arrimo dos pais [354].",
+    "cited": [
+     353,
+     354
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     353,
+     340,
+     355,
+     357,
+     354
+    ],
+    "calls": 2,
+    "tokens": 4474,
+    "tools": [
+     {
+      "name": "read_question",
+      "args": {
+       "number": 354
+      }
+     }
+    ],
+    "ms": 2119,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h04",
+    "text": "Sim, foi permitida a atualização do valor de bens imóveis e de bens móveis automotores terrestres, aquáticos e aéreos sujeitos a registro público (adquiridos com recursos de origem lícita até 31 de dezembro de 2024 e declarados na DAA) para o valor de mercado por meio do Regime Especial de Atualização Patrimonial (Rearp) [650] [651].\n\nO prazo limite para adesão, com a apresentação da Declaração de Opção pelo Regime Especial de Atualização Patrimonial (Deap) e o pagamento integral do imposto à alíquota definitiva de 4%, encerrou-se em **19 de fevereiro de 2026** [650].",
+    "cited": [
+     650,
+     651
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     587,
+     651,
+     652,
+     648,
+     650
+    ],
+    "calls": 2,
+    "tokens": 6988,
+    "tools": [
+     {
+      "name": "search_manual",
+      "args": {
+       "query": "Rearp prazo 2026 atualização de bens automóveis imóveis"
+      }
+     }
+    ],
+    "ms": 2117,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h05",
+    "text": "O imposto sobre a renda relativo a rendimentos pagos por meio de precatório ou requisição de pequeno valor (RPV) será retido na fonte pela instituição financeira responsável no momento do pagamento ao beneficiário ou seu representante legal, incidindo à alíquota de 3% sobre o montante pago, sem quaisquer deduções [232]. \n\nEssa retenção de 3% não é definitiva, sendo considerada uma antecipação do imposto apurado, devendo o contribuinte informar os rendimentos e a respectiva antecipação na Declaração de Ajuste Anual [232]. A retenção é dispensada se o beneficiário declarar à instituição financeira que os rendimentos são isentos ou não tributáveis [232].",
+    "cited": [
+     232
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     232,
+     595,
+     254
+    ],
+    "calls": 1,
+    "tokens": 2406,
+    "tools": [],
+    "ms": 1127,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h06",
+    "text": "O valor em moeda corrente recebido referente a reembolso de diferença do montante de bens e direitos que lhe cabiam em decorrência da meação ou herança corresponde a uma alienação desses bens e direitos que antes lhe pertencia e, portanto, está sujeito à apuração do ganho de capital [586].\n\nSe você receber a casa por um valor superior àquele pelo qual constava na última declaração antes da dissolução da sociedade conjugal ou união estável (valor de mercado), a diferença positiva é tributada à alíquota de 15% em seu nome [690]. Nesse caso, a casa deve ser incluída na sua declaração de bens pelo valor atribuído na transferência, que constituirá o seu custo para efeito de eventual alienação futura [690]. Caso a transferência seja efetuada pelo valor informado na última declaração, não incide imposto no ato e você deve incluir o bem pelo mesmo valor anterior [690].",
+    "cited": [
+     586,
+     690
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     699,
+     459,
+     586,
+     89,
+     690,
+     610,
+     575,
+     668
+    ],
+    "calls": 2,
+    "tokens": 5605,
+    "tools": [
+     {
+      "name": "search_manual",
+      "args": {
+       "query": "reembolso de diferença montante bens meação herança ganho de capital"
+      }
+     }
+    ],
+    "ms": 2381,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h07",
+    "text": "**Filhos da sua esposa (enteados):**\nPodem ser considerados seus dependentes desde que atendam aos limites de idade (até 21 anos, ou até 24 anos se estiverem cursando estabelecimento de ensino superior ou escola técnica de segundo grau) e desde que seja apresentada declaração em conjunto onde sejam tributados os rendimentos de ambos os cônjuges [340] [345] [355]. Caso seja apresentada declaração em separado, os enteados (dependentes próprios de um dos cônjuges) só podem constar na declaração do próprio cônjuge (sua esposa) [345].\n\n**Mãe da sua esposa (sogra):**\nO sogro ou a sogra não podem ser dependentes, salvo se sua esposa (filha dela) estiver declarando em conjunto com você, e desde que a sogra não aufira rendimentos, tributáveis ou não, superiores ao limite de isenção anual (R$ 28.467,20), nem esteja declarando em separado [355].",
+    "cited": [
+     340,
+     345,
+     355
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     353,
+     99,
+     345,
+     343,
+     340,
+     355,
+     341,
+     420
+    ],
+    "calls": 2,
+    "tokens": 5554,
+    "tools": [
+     {
+      "name": "search_manual",
+      "args": {
+       "query": "enteado dependente sogra"
+      }
+     }
+    ],
+    "ms": 2329,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
    }
   ]
  }

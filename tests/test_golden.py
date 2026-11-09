@@ -14,7 +14,7 @@ def test_ids_are_unique():
 
 def test_mix():
     kinds = Counter(item.kind for item in ITEMS)
-    assert set(kinds) == {"number", "direct", "colloquial", "multi-hop", "out-of-scope"}
+    assert set(kinds) == {"number", "direct", "colloquial", "multi-hop", "hard-hop", "out-of-scope"}
     assert len(ITEMS) >= 60
 
 
@@ -26,7 +26,7 @@ def test_fact_is_in_an_expected_question(item: golden.Item):
         assert any(golden.contains(t, fact) for t in texts.values()), f"{fact!r} is in none of {item.expected}"
 
 
-@pytest.mark.parametrize("item", [i for i in ITEMS if i.kind == "multi-hop"], ids=lambda i: i.id)
+@pytest.mark.parametrize("item", [i for i in ITEMS if i.kind in ("multi-hop", "hard-hop")], ids=lambda i: i.id)
 def test_multi_hop_needs_the_second_question(item: golden.Item):
     first = QUESTIONS[item.expected[0]]
     assert item.hop in item.expected[1:]

@@ -57,6 +57,7 @@ def summary(rows: list[dict]) -> dict:
         "by_kind": {k: hit(5, rs=[r for r in scored if r["kind"] == k]) for k in dict.fromkeys(r["kind"] for r in scored)},
         "multi_hop_second@5": hit(5, "hop_rank", multi),
         "multi_hop_both@5": sum(1 for r in multi if r["rank"] and r["rank"] <= 5 and r["hop_rank"] and r["hop_rank"] <= 5) / len(multi),
+        "hard_hop_second@5": hit(5, "hop_rank", [r for r in rows if r["kind"] == "hard-hop"]),
         "top_score_in_scope": statistics.median(r["top_score"] for r in scored),
         "top_score_out_of_scope": statistics.median(r["top_score"] for r in rows if r["kind"] == "out-of-scope"),
         "context_chars@5": statistics.median(sum(r["chars"]) for r in rows),
@@ -76,12 +77,12 @@ def main():
         "",
         f"{len(items)} golden questions, {sum(i.kind != 'out-of-scope' for i in items)} with an answer in the manual.",
         "",
-        "| Index | hit@1 | hit@5 | MRR@10 | " + " | ".join(f"hit@5 {k}" for k in kinds) + " | Multi-hop, second question @5 | Both @5 | Context at 5 (chars) | Median query |",
-        "|---|" + "---|" * (7 + len(kinds)),
+        "| Index | hit@1 | hit@5 | MRR@10 | " + " | ".join(f"hit@5 {k}" for k in kinds) + " | Multi-hop, second question @5 | Both @5 | Hard-hop, second question @5 | Context at 5 (chars) | Median query |",
+        "|---|" + "---|" * (8 + len(kinds)),
         *(
             f"| {c} | {pct(s['hit@1'])} | {pct(s['hit@5'])} | {s['mrr@10']:.2f} | "
             + " | ".join(pct(s["by_kind"][k]) for k in kinds)
-            + f" | {pct(s['multi_hop_second@5'])} | {pct(s['multi_hop_both@5'])} | {s['context_chars@5']:,.0f} | {s['query_ms']:.0f} ms |"
+            + f" | {pct(s['multi_hop_second@5'])} | {pct(s['multi_hop_both@5'])} | {pct(s['hard_hop_second@5'])} | {s['context_chars@5']:,.0f} | {s['query_ms']:.0f} ms |"
             for c, s in sums.items()
         ),
         "",
